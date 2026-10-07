@@ -57,3 +57,7 @@ Everything the app does, including full error details, is written to `le_affix_i
 
 If a character does not load in game, also grab the game's log right after the failure:
 `%USERPROFILE%\AppData\LocalLow\Eleventh Hour Games\Last Epoch\Player.log`
+
+## AI Disclosure
+
+This app was almost entirely produced by AI. Please report any bugs that are identified. 
