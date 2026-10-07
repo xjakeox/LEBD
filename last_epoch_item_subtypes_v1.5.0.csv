@@ -1,0 +1,1559 @@
+﻿Item Type,Item Type ID,Item Subtype,Item Subtype ID,Level Requirement,Equippable,Notes
+Helmet,0,Jewelled Circlet,1,7,Yes,cannot drop
+Helmet,0,Iron Casque,2,10,Yes,cannot drop
+Helmet,0,Dome Cap,4,24,Yes,cannot drop
+Helmet,0,Bronze Casque,5,39,Yes,cannot drop
+Helmet,0,Gladiator Helmet,6,65,Yes,cannot drop
+Helmet,0,Forest Helmet,7,35,Yes,cannot drop
+Helmet,0,Pariah Shroud,8,0,Yes,
+Helmet,0,Bone Mask,9,3,Yes,
+Helmet,0,Skull Cage,10,6,Yes,
+Helmet,0,Death Mask,11,16,Yes,
+Helmet,0,Fiend Cowl,12,29,Yes,
+Helmet,0,Burial Mask,13,51,Yes,
+Helmet,0,Profane Crown,14,60,Yes,
+Helmet,0,Revenant Mask,15,66,Yes,
+Helmet,0,Copper Circlet,16,0,Yes,
+Helmet,0,Adept Helm,17,3,Yes,
+Helmet,0,Keeper Helm,18,6,Yes,
+Helmet,0,Temple Veil,19,22,Yes,
+Helmet,0,Lunar Helm,20,33,Yes,
+Helmet,0,Mystic Helm,21,50,Yes,
+Helmet,0,Celestial Helm,22,56,Yes,
+Helmet,0,Runed Visage,23,63,Yes,
+Helmet,0,Oak Helm,24,0,Yes,
+Helmet,0,Wolf Pelt,25,7,Yes,
+Helmet,0,Forest Cowl,26,13,Yes,
+Helmet,0,Chitin Helm,27,21,Yes,
+Helmet,0,Raptor Helm,28,30,Yes,
+Helmet,0,Icewolf Pelt,29,58,Yes,
+Helmet,0,Darkwolf Pelt,30,58,Yes,
+Helmet,0,Greatwood Visage,31,64,Yes,
+Helmet,0,Leather Helm,32,0,Yes,
+Helmet,0,Infantry Helm,33,3,Yes,
+Helmet,0,Iron Visor,34,12,Yes,
+Helmet,0,Full Helm,35,20,Yes,
+Helmet,0,Winged Helm,36,40,Yes,
+Helmet,0,Myrmidon Helm,37,51,Yes,
+Helmet,0,Augury Helm,38,60,Yes,
+Helmet,0,Solarum Greathelm,39,72,Yes,
+Helmet,0,Tyrant Crown,40,75,Yes,
+Helmet,0,Tusked Greathelm,41,73,Yes,
+Helmet,0,Cloth Hood,42,5,Yes,
+Helmet,0,Leather Mask,43,3,Yes,
+Helmet,0,Bandit Helm,44,7,Yes,
+Helmet,0,Outcast Hat,45,24,Yes,
+Helmet,0,Horned Helm,46,28,Yes,
+Helmet,0,Umbral Hood,47,37,Yes,
+Helmet,0,Exile Hat,48,45,Yes,
+Helmet,0,Pinnacle Helm,49,60,Yes,
+Helmet,0,Falconry Helm,50,68,Yes,
+Helmet,0,Necropolis Helm,51,73,Yes,
+Helmet,0,Terror Crown,52,80,Yes,
+Helmet,0,Avian Helm,53,3,Yes,
+Helmet,0,Kolheim Cowl,54,43,Yes,
+Helmet,0,Meruna Helm,55,51,Yes,
+Helmet,0,Ancestral Crown,56,86,Yes,
+Helmet,0,Weathered Crown,57,14,Yes,
+Helmet,0,Arcane Visage,58,84,Yes,
+Helmet,0,Arena Helm,59,6,Yes,
+Helmet,0,Spiked Helm,60,27,Yes,
+Helmet,0,Leonine Greathelm,61,85,Yes,
+Helmet,0,Witch Hat,62,21,Yes,
+Helmet,0,Coven Hat,63,39,Yes,
+Helmet,0,Immortal Crown,64,79,Yes,
+Helmet,0,Grolehide Hood,65,12,Yes,
+Helmet,0,Scalebane Grimace,66,53,Yes,
+Helmet,0,Blood Visage,67,74,Yes,
+Helmet,0,Dragon Visage,68,81,Yes,
+Helmet,0,Gorgonscale Coif,69,86,Yes,
+Helmet,0,Raven Crown,70,85,Yes,
+Helmet,0,Spiked Cage,71,11,Yes,
+Helmet,0,Torn Hood,72,0,Yes,
+Body Armor,1,Refuge Armor,0,0,Yes,cannot drop
+Body Armor,1,Leather Coat,1,5,Yes,cannot drop
+Body Armor,1,Iron Armor,2,15,Yes,cannot drop
+Body Armor,1,Noble Raiment,3,23,Yes,cannot drop
+Body Armor,1,Banded Armor,4,27,Yes,cannot drop
+Body Armor,1,Copper Plate,5,41,Yes,cannot drop
+Body Armor,1,Gladiator Armor,6,60,Yes,cannot drop
+Body Armor,1,Forest Cuirass,7,35,Yes,cannot drop
+Body Armor,1,Outcast Rags,8,0,Yes,
+Body Armor,1,Heretic Garb,9,1,Yes,
+Body Armor,1,Initiate Robes,10,4,Yes,
+Body Armor,1,Ribbed Cuirass,11,17,Yes,
+Body Armor,1,Fiend Robes,12,27,Yes,
+Body Armor,1,Burial Plate,13,53,Yes,
+Body Armor,1,Profane Regalia,14,61,Yes,
+Body Armor,1,Revenant Plate,15,66,Yes,
+Body Armor,1,Traveling Coat,16,0,Yes,
+Body Armor,1,Adept Robes,17,0,Yes,
+Body Armor,1,Archive Robes,18,12,Yes,
+Body Armor,1,Temple Garb,19,21,Yes,
+Body Armor,1,Opulent Robes,20,40,Yes,
+Body Armor,1,Mystic Plate,21,52,Yes,
+Body Armor,1,Celestial Raiment,22,60,Yes,
+Body Armor,1,Vul'kaur Regalia,23,64,Yes,
+Body Armor,1,Hide Armor,24,0,Yes,
+Body Armor,1,Oak Armor,25,0,Yes,
+Body Armor,1,Forest Garb,26,14,Yes,
+Body Armor,1,Icewolf Garb,27,29,Yes,
+Body Armor,1,Shamanic Garb,28,36,Yes,
+Body Armor,1,Kolheim Armor,29,46,Yes,
+Body Armor,1,Meruna Carapace,30,52,Yes,
+Body Armor,1,Greatwood Coat,31,63,Yes,
+Body Armor,1,Ringmail Hauberk,32,0,Yes,
+Body Armor,1,Infantry Hauberk,33,0,Yes,
+Body Armor,1,Iron Cuirass,34,13,Yes,
+Body Armor,1,Full Plate,35,19,Yes,
+Body Armor,1,Noble Plate,36,42,Yes,
+Body Armor,1,Myrmidon Plate,37,53,Yes,
+Body Armor,1,Augury Plate,38,59,Yes,
+Body Armor,1,Solarum Plate,39,68,Yes,
+Body Armor,1,Apocalypse Plate,40,79,Yes,
+Body Armor,1,Tyrant Regalia,41,77,Yes,
+Body Armor,1,Ancestral Garb,42,76,Yes,
+Body Armor,1,Roughspun Tunic,43,0,Yes,
+Body Armor,1,Leather Hauberk,44,4,Yes,
+Body Armor,1,Bandit Garb,45,6,Yes,
+Body Armor,1,Outcast Coat,46,23,Yes,
+Body Armor,1,Brigandine Armor,47,27,Yes,
+Body Armor,1,Umbral Coat,48,39,Yes,
+Body Armor,1,Exile Coat,49,44,Yes,
+Body Armor,1,Elite Regalia,50,61,Yes,
+Body Armor,1,Falconry Armor,51,67,Yes,
+Body Armor,1,Necropolis Plate,52,71,Yes,
+Body Armor,1,Avian Garb,53,6,Yes,
+Body Armor,1,Chitin Carapace,54,22,Yes,
+Body Armor,1,Beastmail,55,70,Yes,
+Body Armor,1,Keeper Raiment,56,5,Yes,
+Body Armor,1,Lunar Raiment,57,30,Yes,
+Body Armor,1,Arcane Regalia,58,87,Yes,
+Body Armor,1,Worn Plate,59,4,Yes,
+Body Armor,1,Forge Plate,60,29,Yes,
+Body Armor,1,Champion Regalia,61,86,Yes,
+Body Armor,1,Witch Robes,62,29,Yes,
+Body Armor,1,Coven Robes,63,41,Yes,
+Body Armor,1,Immortal Regalia,64,77,Yes,
+Body Armor,1,Grolehide Coat,65,11,Yes,
+Body Armor,1,Scalebane Coat,66,54,Yes,
+Body Armor,1,Wyrmhide Coat,67,73,Yes,
+Body Armor,1,Dragonhide Coat,68,80,Yes,
+Body Armor,1,Gorgonscale Coat,69,85,Yes,
+Body Armor,1,Sanguine Regalia,70,84,Yes,
+Body Armor,1,Urix Garb,71,9,Yes,
+Body Armor,1,Cloth Armor,72,0,Yes,
+Belt,2,Sash,0,0,Yes,
+Belt,2,Leather Belt,1,9,Yes,
+Belt,2,Plated Belt,2,19,Yes,
+Belt,2,Traveller's Belt,3,0,Yes,cannot drop
+Belt,2,Chain Belt,4,31,Yes,
+Belt,2,Nomad Belt,5,45,Yes,
+Belt,2,Noble Sash,6,14,Yes,
+Belt,2,Spidersilk Sash,7,58,Yes,
+Belt,2,Praetorian Belt,8,66,Yes,
+Belt,2,Osprean Belt,9,73,Yes,
+Belt,2,Divine Girdle,10,80,Yes,
+Belt,2,Celestial Girdle,11,52,Yes,cannot drop
+Belt,2,Coinmail Belt,12,52,Yes,cannot drop
+Belt,2,Singularity Belt,13,0,Yes,cannot drop; corrupted
+Belt,2,Corruption Binding,14,0,Yes,cannot drop; corrupted
+Belt,2,Veinweave Belt,15,50,Yes,cannot drop
+Boots,3,Hide Boots,0,0,Yes,
+Boots,3,Leather Boots,1,8,Yes,
+Boots,3,Iron Greaves,2,16,Yes,
+Boots,3,Outcast Boots,3,23,Yes,
+Boots,3,Brigandine Boots,4,30,Yes,
+Boots,3,Heoborean Boots,5,45,Yes,
+Boots,3,Solarum Greaves,6,67,Yes,
+Boots,3,Worn Boots,7,0,Yes,cannot drop
+Boots,3,Shrine Boots,8,55,Yes,
+Boots,3,Arcane Boots,9,60,Yes,
+Boots,3,Vanguard Boots,10,76,Yes,
+Boots,3,Citadel Boots,11,85,Yes,
+Boots,3,Celestial Boots,12,52,Yes,cannot drop
+Boots,3,Mercantile Boots,13,52,Yes,cannot drop
+Boots,3,Veteran's Boots,14,0,Yes,cannot drop
+Boots,3,Icescale Greaves ,15,50,Yes,cannot drop
+Gloves,4,Hide Gloves,0,0,Yes,
+Gloves,4,Leather Gloves,1,6,Yes,
+Gloves,4,Mail Bracers,2,15,Yes,
+Gloves,4,Outcast Gloves,3,25,Yes,
+Gloves,4,Noble Gloves,4,31,Yes,
+Gloves,4,Plated Gauntlets,5,45,Yes,
+Gloves,4,Solarum Bracers,6,62,Yes,
+Gloves,4,Crusader Gauntlets,7,64,Yes,
+Gloves,4,Gluttonous Gloves,8,91,Yes,cannot drop
+Gloves,4,Serrated Bracers,9,62,Yes,cannot drop
+Gloves,4,Arcane Bracers,10,54,Yes,
+Gloves,4,Ascetic Gloves,11,79,Yes,
+Gloves,4,Eternal Gauntlets,12,86,Yes,
+Gloves,4,Celestial Gloves,13,52,Yes,cannot drop
+Gloves,4,Coinmail Gauntlets,14,52,Yes,cannot drop
+Gloves,4,Eber Horn Gauntlets,15,50,Yes,cannot drop
+One-Handed Axe,5,Hatchet,0,0,Yes,
+One-Handed Axe,5,Pickaxe,1,6,Yes,
+One-Handed Axe,5,Rusted Cleaver,2,12,Yes,
+One-Handed Axe,5,Battle Axe,3,24,Yes,
+One-Handed Axe,5,Sickle,4,35,Yes,
+One-Handed Axe,5,Wengari Axe,5,46,Yes,
+One-Handed Axe,5,Crescent Axe,6,51,Yes,
+One-Handed Axe,5,Chitin Claw,7,59,Yes,
+One-Handed Axe,5,Eagle Wing,8,63,Yes,
+One-Handed Axe,5,Soul Harvester,9,66,Yes,
+One-Handed Axe,5,Shadow Cleaver,10,71,Yes,
+One-Handed Axe,5,Dragonbone Axe,11,80,Yes,
+One-Handed Axe,5,Constellation Cleaver,12,52,Yes,cannot drop
+One-Handed Axe,5,Resplendent Axe,13,52,Yes,cannot drop
+One-Handed Axe,5,Marble Dedication,14,52,Yes,cannot drop
+One-Handed Axe,5,Kolheim Axe,15,81,Yes,cannot drop
+One-Handed Axe,5,Avenged Kolheim Axe,16,81,Yes,cannot drop
+One-Handed Axe,5,Ice Pick,17,50,Yes,cannot drop
+Dagger,6,Poignard,0,0,Yes,
+Dagger,6,Sacrificial Knife,1,12,Yes,
+Dagger,6,Bone Dagger,2,25,Yes,
+Dagger,6,Kris,3,27,Yes,
+Dagger,6,Hunting Knife,4,44,Yes,
+Dagger,6,Moon Dagger,5,51,Yes,
+Dagger,6,Majasan Dagger,6,55,Yes,
+Dagger,6,Rune Dagger,7,61,Yes,
+Dagger,6,Sai,8,65,Yes,
+Dagger,6,Chitin Dagger,9,68,Yes,
+Dagger,6,Obsidian Dagger,10,71,Yes,
+Dagger,6,Star Amber Dagger,11,52,Yes,cannot drop
+Dagger,6,Negotiation Dagger,12,52,Yes,cannot drop
+Dagger,6,Shark Tooth,13,81,Yes,cannot drop
+Dagger,6,Avenged Shark Tooth,14,81,Yes,cannot drop
+Dagger,6,Bloodsoaked Dagger,15,50,Yes,cannot drop
+One-Handed Mace,7,Club,0,0,Yes,
+One-Handed Mace,7,Iron Hammer,1,8,Yes,
+One-Handed Mace,7,Flanged Mace,2,18,Yes,
+One-Handed Mace,7,Morning Star,3,29,Yes,
+One-Handed Mace,7,Pick Hammer,4,37,Yes,
+One-Handed Mace,7,Ebertusk Club,5,45,Yes,
+One-Handed Mace,7,Urchin Star,6,50,Yes,
+One-Handed Mace,7,Serpent Mace,7,54,Yes,
+One-Handed Mace,7,Solarum Hammer,8,62,Yes,
+One-Handed Mace,7,Doom Star,9,70,Yes,
+One-Handed Mace,7,Rune Hammer,10,78,Yes,
+One-Handed Mace,7,Trade Star,11,52,Yes,cannot drop
+One-Handed Mace,7,Planetary Mace,12,52,Yes,cannot drop
+One-Handed Mace,7,Chitin Club,13,81,Yes,cannot drop
+One-Handed Mace,7,Avenged Chitin Club,14,81,Yes,cannot drop
+One-Handed Mace,7,Gnarled Antler,15,50,Yes,cannot drop
+Sceptre,8,Brass Sceptre,0,0,Yes,
+Sceptre,8,Ice Sceptre,1,43,Yes,
+Sceptre,8,Ornate Sceptre,2,35,Yes,
+Sceptre,8,Cultist Sceptre,3,11,Yes,
+Sceptre,8,Oak Sceptre,4,21,Yes,
+Sceptre,8,Auric Sceptre,5,52,Yes,
+Sceptre,8,Argent Sceptre,6,63,Yes,
+Sceptre,8,Acolyte's Sceptre,7,0,Yes,cannot drop
+Sceptre,8,Obsidian Sceptre,8,75,Yes,
+Sceptre,8,Skeletal Sceptre,9,67,Yes,
+Sceptre,8,Celestial Sceptre,10,52,Yes,cannot drop
+Sceptre,8,Vault Sceptre,11,52,Yes,cannot drop
+Sceptre,8,Scorn Sceptre,12,81,Yes,cannot drop
+Sceptre,8,Avenged Scorn Sceptre,13,81,Yes,cannot drop
+Sceptre,8,Warden Sceptre,14,50,Yes,cannot drop
+One-Handed Sword,9,Broken Sword,0,5,Yes,
+One-Handed Sword,9,Broadsword,1,20,Yes,
+One-Handed Sword,9,Rust Blade,2,39,Yes,
+One-Handed Sword,9,Gladius,3,0,Yes,
+One-Handed Sword,9,Cultist Blade,4,15,Yes,
+One-Handed Sword,9,Falchion,5,30,Yes,
+One-Handed Sword,9,Longsword,6,50,Yes,
+One-Handed Sword,9,Nagasa Scymitar,7,54,Yes,
+One-Handed Sword,9,Crystal Sword,8,64,Yes,
+One-Handed Sword,9,Katana,9,70,Yes,
+One-Handed Sword,9,Dawn Blade,10,75,Yes,
+One-Handed Sword,9,Prophecy Blade,11,52,Yes,cannot drop
+One-Handed Sword,9,Gilded Rapier,12,52,Yes,cannot drop
+One-Handed Sword,9,Serrated Tooth,13,64,Yes,cannot drop
+One-Handed Sword,9,Cavalry Sword,14,81,Yes,cannot drop
+One-Handed Sword,9,Avenged Cavalry Sword,15,81,Yes,cannot drop
+One-Handed Sword,9,Icicle Sword,16,50,Yes,cannot drop
+Wand,10,Coral Wand,0,51,Yes,
+Wand,10,Rowan Wand,1,0,Yes,
+Wand,10,Archive Wand,2,5,Yes,
+Wand,10,Ornate Wand,3,55,Yes,
+Wand,10,Spriggan Branch,4,47,Yes,
+Wand,10,Ritual Stake,5,14,Yes,
+Wand,10,Ivory Wand,6,31,Yes,
+Wand,10,Birch Wand,7,20,Yes,
+Wand,10,Profane Wand,8,67,Yes,
+Wand,10,Crystal Wand,9,60,Yes,
+Wand,10,Dragonhorn Wand,10,77,Yes,
+Wand,10,Siren Wand,11,52,Yes,cannot drop
+Wand,10,Astrology Wand,12,52,Yes,cannot drop
+Wand,10,Lodestone Wand,13,81,Yes,cannot drop
+Wand,10,Avenged Lodestone Wand,14,81,Yes,cannot drop
+Wand,10,Farwood Branch,15,50,Yes,cannot drop
+Two-Handed Axe,12,Forestry Axe,0,0,Yes,
+Two-Handed Axe,12,Refuge Axe,1,5,Yes,
+Two-Handed Axe,12,Cultist Chopper,2,14,Yes,
+Two-Handed Axe,12,Bearded Axe,3,21,Yes,
+Two-Handed Axe,12,Imperial Halberd,4,33,Yes,
+Two-Handed Axe,12,Ice Axe,5,47,Yes,
+Two-Handed Axe,12,Great Axe,6,54,Yes,
+Two-Handed Axe,12,Jade Cleaver,7,62,Yes,
+Two-Handed Axe,12,Obsidian Axe,8,64,Yes,
+Two-Handed Axe,12,Bone Scythe,9,66,Yes,
+Two-Handed Axe,12,Bardiche,10,71,Yes,
+Two-Handed Axe,12,Radiant Axe,11,76,Yes,
+Two-Handed Axe,12,Fire Lich Scythe,13,76,Yes,cannot drop
+Two-Handed Axe,12,Orbit Cleaver,14,52,Yes,cannot drop
+Two-Handed Axe,12,War Anchor,15,52,Yes,cannot drop
+Two-Handed Axe,12,Sun Beak,16,81,Yes,cannot drop
+Two-Handed Axe,12,Avenged Sun Beak,17,81,Yes,cannot drop
+Two-Handed Axe,12,Frozen Cleaver,18,50,Yes,cannot drop
+Two-Handed Mace,13,Great Mace,0,0,Yes,
+Two-Handed Mace,13,Spiked Great Club,1,7,Yes,
+Two-Handed Mace,13,Maul,2,19,Yes,
+Two-Handed Mace,13,Spiked Maul,3,28,Yes,
+Two-Handed Mace,13,Giant Club,4,39,Yes,
+Two-Handed Mace,13,Great Hammer,5,52,Yes,
+Two-Handed Mace,13,Titan Femur,6,58,Yes,
+Two-Handed Mace,13,Terror Mace,7,66,Yes,
+Two-Handed Mace,13,Lucerne,8,74,Yes,
+Two-Handed Mace,13,Eber Head,9,78,Yes,
+Two-Handed Mace,13,Star Hammer,10,52,Yes,cannot drop
+Two-Handed Mace,13,Vault Crusher,11,52,Yes,cannot drop
+Two-Handed Mace,13,Obsidian Hammer,12,81,Yes,cannot drop
+Two-Handed Mace,13,Avenged Obsidian Hammer,13,81,Yes,cannot drop
+Two-Handed Mace,13,Carnage Maul,14,50,Yes,cannot drop
+Two-Handed Spear,14,Pike,0,6,Yes,
+Two-Handed Spear,14,Short Spear,1,0,Yes,
+Two-Handed Spear,14,Ice Spear,2,46,Yes,
+Two-Handed Spear,14,Impaler,3,16,Yes,
+Two-Handed Spear,14,Trident,4,51,Yes,
+Two-Handed Spear,14,Glaive,5,29,Yes,
+Two-Handed Spear,14,Polesword,6,22,Yes,
+Two-Handed Spear,14,Dragonslayer Glaive,7,76,Yes,
+Two-Handed Spear,14,Deicide Lance,8,82,Yes,
+Two-Handed Spear,14,Sun Spear,9,63,Yes,
+Two-Handed Spear,14,Dredge Hook,10,38,Yes,
+Two-Handed Spear,14,Coiled Bident,11,56,Yes,
+Two-Handed Spear,14,Obsidian Lance,12,68,Yes,
+Two-Handed Spear,14,Jadebone Javelin,13,58,Yes,cannot drop
+Two-Handed Spear,14,Rat City Impaler,14,60,Yes,cannot drop
+Two-Handed Spear,14,Mesembrian Spear,15,52,Yes,cannot drop
+Two-Handed Spear,14,Harpoon,16,52,Yes,cannot drop
+Two-Handed Spear,14,Raptor Spear,17,81,Yes,cannot drop
+Two-Handed Spear,14,Avenged Raptor Spear,18,81,Yes,cannot drop
+Two-Handed Spear,14,Bloodfused Icicle,19,50,Yes,cannot drop
+Two-Handed Staff,15,Travelling Staff,0,0,Yes,
+Two-Handed Staff,15,Root Staff,1,6,Yes,
+Two-Handed Staff,15,Sacrificial Staff,2,13,Yes,
+Two-Handed Staff,15,Quarter Staff,3,23,Yes,
+Two-Handed Staff,15,Imperial Staff,4,29,Yes,
+Two-Handed Staff,15,Spine Rod,5,38,Yes,
+Two-Handed Staff,15,Shamanic Staff,6,46,Yes,
+Two-Handed Staff,15,Moon Staff,7,50,Yes,
+Two-Handed Staff,15,Crystal Staff,8,58,Yes,
+Two-Handed Staff,15,Horned Staff,9,66,Yes,
+Two-Handed Staff,15,Temple Staff,10,70,Yes,
+Two-Handed Staff,15,Bladed Staff,11,74,Yes,
+Two-Handed Staff,15,Gate Staff,12,80,Yes,
+Two-Handed Staff,15,Dragon Staff,13,85,Yes,
+Two-Handed Staff,15,Abyssal Staff,14,70,Yes,cannot drop
+Two-Handed Staff,15,Prophecy Staff,15,52,Yes,cannot drop
+Two-Handed Staff,15,Mercantile Staff,16,52,Yes,cannot drop
+Two-Handed Staff,15,Ram Staff,17,81,Yes,cannot drop
+Two-Handed Staff,15,Avenged Ram Staff,18,81,Yes,cannot drop
+Two-Handed Staff,15,Axe Staff,19,50,Yes,cannot drop
+Two-Handed Sword,16,Bastard Sword,0,0,Yes,
+Two-Handed Sword,16,Split Greatsword,1,10,Yes,
+Two-Handed Sword,16,Imperial Warblade,2,24,Yes,
+Two-Handed Sword,16,Khopesh,3,36,Yes,
+Two-Handed Sword,16,Claymore,4,46,Yes,
+Two-Handed Sword,16,Odachi,5,56,Yes,
+Two-Handed Sword,16,Winged Blade,6,61,Yes,
+Two-Handed Sword,16,Flamberge,7,70,Yes,
+Two-Handed Sword,16,Hollow Blade,8,77,Yes,
+Two-Handed Sword,16,Zweihander,9,80,Yes,
+Two-Handed Sword,16,Solarum Greatsword,10,80,Yes,cannot drop
+Two-Handed Sword,16,Celestial Greatsword,11,52,Yes,cannot drop
+Two-Handed Sword,16,Great Cutlass,12,52,Yes,cannot drop
+Two-Handed Sword,16,Great Macuahuitl,13,81,Yes,cannot drop
+Two-Handed Sword,16,Avenged Great Macuahuitl,14,81,Yes,cannot drop
+Two-Handed Sword,16,Giant Rapier,15,68,Yes,cannot drop
+Two-Handed Sword,16,Bloodfused Blade,16,50,Yes,cannot drop
+Quiver,17,Light Quiver,0,0,Yes,
+Quiver,17,Heavy Quiver,1,7,Yes,
+Quiver,17,Ivory Quiver,2,23,Yes,
+Quiver,17,Nomad Quiver,3,44,Yes,
+Quiver,17,Farwood Quiver,4,48,Yes,
+Quiver,17,Skalnir Quiver,5,52,Yes,
+Quiver,17,Nagasa Quiver,6,65,Yes,
+Quiver,17,Spidersilk Quiver,7,68,Yes,
+Quiver,17,Steelweave Quiver,8,77,Yes,
+Quiver,17,Blade Quiver,9,81,Yes,cannot drop
+Quiver,17,Avenged Blade Quiver,10,81,Yes,cannot drop
+Quiver,17,Bloodpelt Quiver,11,50,Yes,cannot drop
+Shield,18,Wooden Shield,0,0,Yes,
+Shield,18,Targe,1,3,Yes,
+Shield,18,Heater Shield,2,15,Yes,
+Shield,18,Renegade Shield,3,0,Yes,cannot drop
+Shield,18,Cavalier Shield,4,24,Yes,
+Shield,18,Tower Shield,5,30,Yes,
+Shield,18,Bandit Shield,6,36,Yes,
+Shield,18,Root Shield,7,41,Yes,
+Shield,18,Frostbound Shield,8,45,Yes,
+Shield,18,Kite Shield,9,50,Yes,
+Shield,18,Meruna Shell,10,52,Yes,
+Shield,18,Mountain Shield,11,59,Yes,
+Shield,18,Carapace Shield,12,64,Yes,
+Shield,18,Ironglass Shield,13,72,Yes,
+Shield,18,Dawn Shield,14,76,Yes,
+Shield,18,Rotskin Round Shield,15,65,Yes,cannot drop
+Shield,18,Stone Shield,16,45,Yes,cannot drop
+Shield,18,Old Kite Shield,17,50,Yes,cannot drop
+Shield,18,Ship Wheel,18,52,Yes,cannot drop
+Shield,18,Ephemeris Shield,19,52,Yes,cannot drop
+Shield,18,Culnivan Shield,20,81,Yes,cannot drop
+Shield,18,Avenged Culnivan Shield,21,81,Yes,cannot drop
+Shield,18,Icespike Shield,22,50,Yes,cannot drop
+Off-Hand Catalyst,19,Glass Catalyst,0,0,Yes,
+Off-Hand Catalyst,19,Leatherbound Tome,1,4,Yes,
+Off-Hand Catalyst,19,Ritual Stone,2,12,Yes,
+Off-Hand Catalyst,19,Branded Skull,3,24,Yes,
+Off-Hand Catalyst,19,Sapphire Tome,4,32,Yes,
+Off-Hand Catalyst,19,Osprix Skull,5,38,Yes,
+Off-Hand Catalyst,19,Rune Stone,6,46,Yes,
+Off-Hand Catalyst,19,Astrolabe,7,50,Yes,
+Off-Hand Catalyst,19,Opulent Focus,8,54,Yes,
+Off-Hand Catalyst,19,Dragon Eye,9,62,Yes,
+Off-Hand Catalyst,19,Fleshbound Tome,10,66,Yes,
+Off-Hand Catalyst,19,Crystal Skull,11,74,Yes,
+Off-Hand Catalyst,19,Chronolabe,12,80,Yes,
+Off-Hand Catalyst,19,Divine Instrument,13,62,Yes,cannot drop
+Off-Hand Catalyst,19,Avian Puppet,14,66,Yes,cannot drop
+Off-Hand Catalyst,19,Soulmass,15,36,Yes,cannot drop
+Off-Hand Catalyst,19,Trade Ledger,16,52,Yes,cannot drop
+Off-Hand Catalyst,19,Celestial Compass,17,52,Yes,cannot drop
+Off-Hand Catalyst,19,Crystal Core,18,81,Yes,cannot drop
+Off-Hand Catalyst,19,Avenged Crystal Core,19,81,Yes,cannot drop
+Off-Hand Catalyst,19,Iron Smoker,20,40,Yes,cannot drop
+Off-Hand Catalyst,19,Frozen Skull,21,50,Yes,cannot drop
+Amulet,20,Copper Amulet,0,18,Yes,
+Amulet,20,Jade Amulet,1,4,Yes,
+Amulet,20,Silver Amulet,2,24,Yes,
+Amulet,20,Brass Amulet,3,4,Yes,
+Amulet,20,Turquoise Amulet,4,36,Yes,
+Amulet,20,Ruby Amulet,5,0,Yes,
+Amulet,20,Sapphire Amulet,6,44,Yes,
+Amulet,20,Bone Amulet,7,58,Yes,
+Amulet,20,Oracle Amulet,8,76,Yes,
+Amulet,20,Gold Amulet,9,71,Yes,
+Amulet,20,Astrology Amulet,10,52,Yes,cannot drop
+Amulet,20,Mercantile Amulet,11,52,Yes,cannot drop
+Amulet,20,Unbound Locket,12,80,Yes,cannot drop
+Amulet,20,Amber Amulet,13,24,Yes,cannot drop
+Amulet,20,Stone Amulet,14,80,Yes,cannot drop
+Amulet,20,Fossil Amulet,15,11,Yes,cannot drop
+Amulet,20,Deadstar Amulet,16,0,Yes,cannot drop; corrupted
+Amulet,20,Cursed Coin Amulet,17,0,Yes,cannot drop; corrupted
+Amulet,20,Spider Eye Amulet,18,0,Yes,cannot drop
+Ring,21,Copper Ring,0,14,Yes,
+Ring,21,Ruby Ring,1,62,Yes,
+Ring,21,Sapphire Ring,2,40,Yes,
+Ring,21,Silver Ring,3,0,Yes,
+Ring,21,Gold Ring,4,25,Yes,
+Ring,21,Captain's Ring,5,0,Yes,cannot drop
+Ring,21,Jade Ring,6,0,Yes,
+Ring,21,Turquoise Ring,7,31,Yes,
+Ring,21,Ivory Ring,8,66,Yes,
+Ring,21,Coral Ring,9,48,Yes,
+Ring,21,Opal Ring,10,52,Yes,
+Ring,21,Celestial Ring,11,52,Yes,cannot drop
+Ring,21,Mercantile Insignia,12,52,Yes,cannot drop
+Ring,21,Corrupted Insignia,14,0,Yes,cannot drop; corrupted
+Ring,21,Opal Eye Ring,15,0,Yes,cannot drop; corrupted
+Relic,22,Reliquary Text,0,0,Yes,cannot drop
+Relic,22,Lost Journal,1,0,Yes,cannot drop
+Relic,22,Reliquary Grimoire,2,0,Yes,cannot drop
+Relic,22,Copper Chalice,3,0,Yes,
+Relic,22,Silver Grail,4,15,Yes,
+Relic,22,Golden Chalice,5,37,Yes,
+Relic,22,Grave Lantern,6,34,Yes,cannot drop
+Relic,22,Overgrowth Bloom,7,35,Yes,cannot drop
+Relic,22,Navigation Orb,8,61,Yes,cannot drop
+Relic,22,Broken Hilt,9,46,Yes,cannot drop
+Relic,22,Splintered Haft,10,65,Yes,cannot drop
+Relic,22,Defiled Bones,11,0,Yes,
+Relic,22,Caged Souls,12,5,Yes,
+Relic,22,Homunculus Bile,13,13,Yes,
+Relic,22,Cursed Bones,14,33,Yes,
+Relic,22,Runed Bones,15,51,Yes,
+Relic,22,Decaying Homunculus,16,59,Yes,
+Relic,22,Damned Souls,17,63,Yes,
+Relic,22,Homunculus Blood,18,65,Yes,
+Relic,22,Putrid Souls,19,71,Yes,
+Relic,22,Runic Scroll,20,0,Yes,
+Relic,22,Arcane Quill,21,6,Yes,
+Relic,22,Third Eye,22,12,Yes,
+Relic,22,Scrivening Quill,23,41,Yes,
+Relic,22,Ancient Scroll,24,52,Yes,
+Relic,22,Scrying Eye,25,58,Yes,
+Relic,22,Warding Scroll,26,64,Yes,
+Relic,22,Rune Quill,27,72,Yes,
+Relic,22,Elder Eye,28,76,Yes,
+Relic,22,Dream Catcher,29,0,Yes,
+Relic,22,Sage Antler,30,4,Yes,
+Relic,22,Living Seed,31,11,Yes,
+Relic,22,Ochre Antler,32,18,Yes,
+Relic,22,Spriggan Seed,33,45,Yes,
+Relic,22,Blood Catcher,34,53,Yes,
+Relic,22,Frostborn Seed,35,67,Yes,
+Relic,22,Spirit Catcher,36,70,Yes,
+Relic,22,Woad Antler,37,75,Yes,
+Relic,22,Sunrise Emblem,38,0,Yes,
+Relic,22,Heretical Script,39,5,Yes,
+Relic,22,Mournful Pennant,40,12,Yes,
+Relic,22,Inscribed Tablet,41,29,Yes,
+Relic,22,Solarum Banner,42,44,Yes,
+Relic,22,Solar Commandment,43,50,Yes,
+Relic,22,Argent Crest,44,58,Yes,
+Relic,22,Dread Banner,45,63,Yes,
+Relic,22,Tainted Effigy,46,77,Yes,
+Relic,22,Ivory Dice,47,0,Yes,
+Relic,22,Venom Phial,48,4,Yes,
+Relic,22,Weathered Coins,49,16,Yes,
+Relic,22,Stolen Tithe,50,44,Yes,
+Relic,22,Oil Vial,51,51,Yes,
+Relic,22,Jade Dice,52,55,Yes,
+Relic,22,Ruby Dice,53,62,Yes,
+Relic,22,Antidote Vial,54,68,Yes,
+Relic,22,Ancient Coins,55,74,Yes,
+Relic,22,Lost Anchor,56,80,Yes,cannot drop
+Relic,22,Stone Tablet,57,78,Yes,cannot drop
+Relic,22,Dragon Heart,58,80,Yes,cannot drop
+Relic,22,Blood Encased Hive,59,70,Yes,cannot drop
+Relic,22,Runed Box,60,36,Yes,cannot drop
+Relic,22,Stone Egg,61,0,Yes,cannot drop
+Relic,22,Void Star,62,0,Yes,cannot drop
+Relic,22,Ancient Remains,63,0,Yes,cannot drop
+Relic,22,Timeglass Chalice,64,0,Yes,cannot drop; corrupted
+Relic,22,Doom Gourd,65,0,Yes,cannot drop; corrupted
+Relic,22,Aberrant Eye,66,0,Yes,cannot drop; corrupted
+Relic,22,Apocalypse Code,67,0,Yes,cannot drop; corrupted
+Relic,22,Prophetic Homonculus,68,0,Yes,cannot drop; corrupted
+Relic,22,Bottled Time,69,0,Yes,cannot drop; corrupted
+Relic,22,Bramble Totem,70,0,Yes,cannot drop
+Relic,22,Artificer's Device,71,35,Yes,cannot drop
+Relic,22,Wooden Carving,72,30,Yes,cannot drop
+Bow,23,Shortbow,0,0,Yes,
+Bow,23,Birch Bow,1,6,Yes,
+Bow,23,Salvaged Bow,2,13,Yes,
+Bow,23,Imperial Bow,3,23,Yes,
+Bow,23,Recurve Bow,4,30,Yes,
+Bow,23,Northern Bow,5,43,Yes,
+Bow,23,Longbow,6,50,Yes,
+Bow,23,Dreadthorn Bow,7,58,Yes,
+Bow,23,Serpent Bow,8,60,Yes,
+Bow,23,Osprix Bow,9,62,Yes,
+Bow,23,Obsidian Bow,10,72,Yes,
+Bow,23,Storm Bow,11,50,Yes,cannot drop
+Bow,23,Aphelion Bow,12,52,Yes,cannot drop
+Bow,23,Sharktooth Bow,13,52,Yes,cannot drop
+Bow,23,Silverwing Bow,14,81,Yes,cannot drop
+Bow,23,Avenged Silverwing Bow,15,81,Yes,cannot drop
+Bow,23,Icicle Bow,16,50,Yes,cannot drop
+Small Idol,25,Small Eterran Idol,0,0,Yes,
+Small Idol,25,Small Orobyss Idol,1,0,Yes,cannot drop
+Small Idol,25,Small Weaver Idol,2,0,Yes,cannot drop
+Minor Idol,26,Minor Lagonian Idol,0,0,Yes,
+Minor Idol,26,Minor Weaver Idol,1,0,Yes,cannot drop
+Humble Idol,27,Humble Eterran Idol,0,0,Yes,
+Humble Idol,27,Humble Weaver Idol,1,0,Yes,cannot drop
+Stout Idol,28,Stout Lagonian Idol,0,0,Yes,
+Stout Idol,28,Stout Weaver Idol,1,0,Yes,cannot drop
+Grand Idol,29,Grand Heorot Idol,0,0,Yes,
+Grand Idol,29,Grand Glass Idol,1,0,Yes,
+Grand Idol,29,Grand Solar Idol,2,0,Yes,
+Grand Idol,29,Grand Bone Idol,3,0,Yes,
+Grand Idol,29,Grand Majasan Idol,4,0,Yes,
+Grand Idol,29,Heretical Grand Heorot Idol,5,0,Yes,cannot drop
+Grand Idol,29,Heretical Grand Glass Idol,6,0,Yes,cannot drop
+Grand Idol,29,Heretical Grand Solar Idol,7,0,Yes,cannot drop
+Grand Idol,29,Heretical Grand Bone Idol,8,0,Yes,cannot drop
+Grand Idol,29,Heretical Grand Majasan Idol,9,0,Yes,cannot drop
+Grand Idol,29,Grand Primal Omen Idol,10,0,Yes,
+Grand Idol,29,Grand Arcane Omen Idol,11,0,Yes,
+Grand Idol,29,Grand Iron Omen Idol,12,0,Yes,
+Grand Idol,29,Grand Spectral Omen Idol,13,0,Yes,
+Grand Idol,29,Grand Umbral Omen Idol,14,0,Yes,
+Grand Idol,29,Grand Ash Idol,15,0,Yes,cannot drop
+Large Idol,30,Large Nomad Idol,0,0,Yes,
+Large Idol,30,Large Arcane Idol,1,0,Yes,
+Large Idol,30,Large Rahyeh Idol,2,0,Yes,
+Large Idol,30,Large Immortal Idol,3,0,Yes,
+Large Idol,30,Large Shadow Idol,4,0,Yes,
+Large Idol,30,Heretical Large Nomad Idol,5,0,Yes,cannot drop
+Large Idol,30,Heretical Large Arcane Idol,6,0,Yes,cannot drop
+Large Idol,30,Heretical Large Rahyeh Idol,7,0,Yes,cannot drop
+Large Idol,30,Heretical Large Immortal Idol,8,0,Yes,cannot drop
+Large Idol,30,Heretical Large Shadow Idol,9,0,Yes,cannot drop
+Large Idol,30,Large Primal Omen Idol,10,0,Yes,
+Large Idol,30,Large Arcane Omen Idol,11,0,Yes,
+Large Idol,30,Large Iron Omen Idol,12,0,Yes,
+Large Idol,30,Large Spectral Omen Idol,13,0,Yes,
+Large Idol,30,Large Umbral Omen Idol,14,0,Yes,
+Ornate Idol,31,Ornate Heorot Idol,0,0,Yes,
+Ornate Idol,31,Ornate Glass Idol,1,0,Yes,
+Ornate Idol,31,Ornate Solar Idol,2,0,Yes,
+Ornate Idol,31,Ornate Bone Idol,3,0,Yes,
+Ornate Idol,31,Ornate Majasan Idol,4,0,Yes,
+Ornate Idol,31,Heretical Ornate Heorot Idol,5,0,Yes,cannot drop
+Ornate Idol,31,Heretical Ornate Glass Idol,6,0,Yes,cannot drop
+Ornate Idol,31,Heretical Ornate Solar Idol,7,0,Yes,cannot drop
+Ornate Idol,31,Heretical Ornate Bone Idol,8,0,Yes,cannot drop
+Ornate Idol,31,Heretical Ornate Majasan Idol,9,0,Yes,cannot drop
+Huge Idol,32,Huge Nomad Idol,0,0,Yes,
+Huge Idol,32,Huge Arcane Idol,1,0,Yes,
+Huge Idol,32,Huge Rahyeh Idol,2,0,Yes,
+Huge Idol,32,Huge Immortal Idol,3,0,Yes,
+Huge Idol,32,Huge Shadow Idol,4,0,Yes,
+Huge Idol,32,Heretical Huge Nomad Idol,5,0,Yes,cannot drop
+Huge Idol,32,Heretical Huge Arcane Idol,6,0,Yes,cannot drop
+Huge Idol,32,Heretical Huge Rahyeh Idol,7,0,Yes,cannot drop
+Huge Idol,32,Heretical Huge Immortal Idol,8,0,Yes,cannot drop
+Huge Idol,32,Heretical Huge Shadow Idol,9,0,Yes,cannot drop
+Adorned Idol,33,Adorned Heorot Idol,0,0,Yes,
+Adorned Idol,33,Adorned Arcane Idol,1,0,Yes,
+Adorned Idol,33,Adorned Rahyeh Idol,2,0,Yes,
+Adorned Idol,33,Adorned Immortal Idol,3,0,Yes,
+Adorned Idol,33,Adorned Majasan Idol,4,0,Yes,
+Adorned Idol,33,Adorned Silver Idol,5,0,Yes,cannot drop
+Adorned Idol,33,Adorned Volcano Idol,6,0,Yes,cannot drop
+Adorned Idol,33,Heretical Adorned Heorot Idol,7,0,Yes,cannot drop
+Adorned Idol,33,Heretical Adorned Arcane Idol,8,0,Yes,cannot drop
+Adorned Idol,33,Heretical Adorned Rahyeh Idol,9,0,Yes,cannot drop
+Adorned Idol,33,Heretical Adorned Immortal Idol,10,0,Yes,cannot drop
+Adorned Idol,33,Heretical Adorned Majasan Idol,11,0,Yes,cannot drop
+Adorned Idol,33,Adorned Discarded Idol,12,0,Yes,cannot drop
+Blessing,34,Pride of Rebellion,0,0,Yes,cannot drop
+Blessing,34,Grand Pride of Rebellion,1,0,Yes,cannot drop
+Blessing,34,Sight of the Outcasts,2,0,Yes,cannot drop
+Blessing,34,Grand Sight of the Outcasts,3,0,Yes,cannot drop
+Blessing,34,Curse of Flesh,4,0,Yes,cannot drop
+Blessing,34,Grand Curse of Flesh,5,0,Yes,cannot drop
+Blessing,34,Favor of Souls,6,0,Yes,cannot drop
+Blessing,34,Grand Favor of Souls,7,0,Yes,
+Blessing,34,Mark of Agony,8,0,Yes,
+Blessing,34,Grand Mark of Agony,9,0,Yes,
+Blessing,34,Memory of the Living,10,0,Yes,
+Blessing,34,Grand Memory of the Living,11,0,Yes,
+Blessing,34,Sign of Torment,12,0,Yes,
+Blessing,34,Grand Sign of Torment,13,0,Yes,
+Blessing,34,Cruelty of Formosus,14,0,Yes,
+Blessing,34,Savior of the North,15,0,Yes,
+Blessing,34,Chill of Death,16,0,Yes,
+Blessing,34,Enmity of the Clans,17,0,Yes,
+Blessing,34,Ambition of the Empire,18,0,Yes,
+Blessing,34,Scars of Blood,19,0,Yes,
+Blessing,34,Favor of the Wengari,20,0,Yes,
+Blessing,34,Resolve of Frost,21,0,Yes,
+Blessing,34,Shards of Unity,22,0,Yes,
+Blessing,34,Remorse of Heorot,23,0,Yes,
+Blessing,34,Memory of Light,24,0,Yes,
+Blessing,34,Grand Memory of Light,25,0,Yes,
+Blessing,34,Echo of Solarum,26,0,Yes,
+Blessing,34,Grand Echo of Solarum,27,0,Yes,
+Blessing,34,Shadow of the Eclipse,28,0,Yes,
+Blessing,34,Grand Shadow of the Eclipse,29,0,Yes,
+Blessing,34,Wrath of Rahyeh,30,0,Yes,
+Blessing,34,Grand Wrath of Rahyeh,31,0,Yes,
+Blessing,34,Whisper of Orobyss,32,0,Yes,
+Blessing,34,Grand Whisper of Orobyss,33,0,Yes,
+Blessing,34,Flames of the Black Sun,34,0,Yes,
+Blessing,34,Grand Flames of the Black Sun,35,0,Yes,
+Blessing,34,Hunger of the Void,36,0,Yes,
+Blessing,34,Grand Hunger of the Void,37,0,Yes,
+Blessing,34,Strength of the Mountain,38,0,Yes,
+Blessing,34,Grand Strength of the Mountain,39,0,Yes,
+Blessing,34,Winds of Oblivion,40,0,Yes,
+Blessing,34,Grand Winds of Oblivion,41,0,Yes,
+Blessing,34,Depths of Infinity,42,0,Yes,
+Blessing,34,Grand Depths of Infinity,43,0,Yes,
+Blessing,34,Greed of Darkness,44,0,Yes,
+Blessing,34,Grand Greed of Darkness,45,0,Yes,
+Blessing,34,Emptiness of Ash,46,0,Yes,
+Blessing,34,Grand Emptiness of Ash,47,0,Yes,
+Blessing,34,Thirst of the Sun,48,0,Yes,
+Blessing,34,Grand Thirst of the Sun,49,0,Yes,
+Blessing,34,Hope of the Beginning,50,0,Yes,
+Blessing,34,Safety of the Labyrinth,51,0,Yes,
+Blessing,34,Remnants of the Living,52,0,Yes,
+Blessing,34,Visions of Death,53,0,Yes,
+Blessing,34,Inevitability of the Void,54,0,Yes,
+Blessing,34,Rot of the World,55,0,Yes,
+Blessing,34,Boon of the Scarab,56,0,Yes,
+Blessing,34,Shadows of Infinity,57,0,Yes,
+Blessing,34,Despair of the Empire,58,0,Yes,
+Blessing,34,Vigilance of the Damned,59,0,Yes,
+Blessing,34,Subtlety of Slaughter,60,0,Yes,
+Blessing,34,Apex of Fortune,61,0,Yes,
+Blessing,34,Arrogance of Argentus,62,0,Yes,
+Blessing,34,Embrace of Ice,63,0,Yes,
+Blessing,34,Grip of the Lance,64,0,Yes,
+Blessing,34,Right of Conquest,65,0,Yes,
+Blessing,34,Reach of Flame,66,0,Yes,
+Blessing,34,Binds of Sanctuary,67,0,Yes,
+Blessing,34,Slumber of Morditas,68,0,Yes,
+Blessing,34,Talon of Grandeur,69,0,Yes,
+Blessing,34,Vision of the Aurora,70,0,Yes,
+Blessing,34,Might of the Siege,71,0,Yes,
+Blessing,34,Bastion of Divinity,72,0,Yes,
+Blessing,34,Grand Bastion of Divinity,73,0,Yes,
+Blessing,34,Light of the Moon,74,0,Yes,
+Blessing,34,Grand Light of the Moon,75,0,Yes,
+Blessing,34,Rhythm of the Tide,76,0,Yes,
+Blessing,34,Grand Rhythm of the Tide,77,0,Yes,
+Blessing,34,Chaos of Lagon,78,0,Yes,
+Blessing,34,Grand Chaos of Lagon,79,0,Yes,
+Blessing,34,Might of the Sea Titan,80,0,Yes,
+Blessing,34,Grand Might of the Sea Titan,81,0,Yes,
+Blessing,34,Resonance of the Sea,82,0,Yes,
+Blessing,34,Grand Resonance of the Sea,83,0,Yes,
+Blessing,34,Mysteries of the Deep,84,0,Yes,
+Blessing,34,Grand Mysteries of the Deep,85,0,Yes,
+Blessing,34,Cruelty of the Meruna,86,0,Yes,
+Blessing,34,Grand Cruelty of the Meruna,87,0,Yes,
+Blessing,34,Weight of the Abyss,88,0,Yes,
+Blessing,34,Grand Weight of the Abyss,89,0,Yes,
+Blessing,34,Crash of the Waves,90,0,Yes,
+Blessing,34,Grand Crash of the Waves,91,0,Yes,
+Blessing,34,Trance of the Sirens,92,0,Yes,
+Blessing,34,Grand Trance of the Sirens,93,0,Yes,
+Blessing,34,Intellect of Liath,94,0,Yes,
+Blessing,34,Grand Intellect of Liath,95,0,Yes,
+Blessing,34,Grace of Water,96,0,Yes,
+Blessing,34,Grand Grace of Water,97,0,Yes,
+Blessing,34,Resolve of Humanity,98,0,Yes,
+Blessing,34,Survival of Might,99,0,Yes,
+Blessing,34,Dream of Eterra,100,0,Yes,
+Blessing,34,Binds of Nature,101,0,Yes,
+Blessing,34,Despair of Flesh,102,0,Yes,
+Blessing,34,Cruelty of Strength,103,0,Yes,
+Blessing,34,Hemmorage of Marrow,104,0,Yes,
+Blessing,34,Taste of Venom,105,0,Yes,
+Blessing,34,Hunger of Dragons,106,0,Yes,
+Blessing,34,Virtue of Command,107,0,Yes,
+Blessing,34,Persistance of Will,108,0,Yes,
+Blessing,34,Guile of Wyrms,109,0,Yes,
+Blessing,34,Allure of Apathy,110,0,Yes,
+Blessing,34,Winds of Fortune,111,0,Yes,
+Blessing,34,Grand Winds of Fortune,112,0,Yes,
+Blessing,34,Strength of Mind,113,0,Yes,
+Blessing,34,Grand Strength of Mind,114,0,Yes,
+Blessing,34,Scales of Greed,115,0,Yes,
+Blessing,34,Grand Scales of Greed,116,0,Yes,
+Blessing,34,Grand Arrogance of Argentus,117,0,Yes,cannot drop
+Blessing,34,Grand Embrace of Ice,118,0,Yes,cannot drop
+Blessing,34,Grand Grip of the Lance,119,0,Yes,cannot drop
+Blessing,34,Grand Right of Conquest,120,0,Yes,cannot drop
+Blessing,34,Grand Reach of Flame,121,0,Yes,cannot drop
+Blessing,34,Grand Binds of Sanctuary,122,0,Yes,cannot drop
+Blessing,34,Grand Slumber of Morditas,123,0,Yes,cannot drop
+Blessing,34,Grand Talon of Grandeur,124,0,Yes,cannot drop
+Blessing,34,Grand Vision of the Aurora,125,0,Yes,cannot drop
+Blessing,34,Grand Might of the Siege,126,0,Yes,cannot drop
+Blessing,34,Grand Cruelty of Formosus,127,0,Yes,cannot drop
+Blessing,34,Grand Savior of the North,128,0,Yes,cannot drop
+Blessing,34,Grand Chill of Death,129,0,Yes,cannot drop
+Blessing,34,Grand Enmity of the Clans,130,0,Yes,cannot drop
+Blessing,34,Grand Ambition of the Empire,131,0,Yes,cannot drop
+Blessing,34,Grand Scars of Blood,132,0,Yes,cannot drop
+Blessing,34,Grand Favor of the Wengari,133,0,Yes,cannot drop
+Blessing,34,Grand Resolve of Frost,134,0,Yes,cannot drop
+Blessing,34,Grand Shards of Unity,135,0,Yes,cannot drop
+Blessing,34,Grand Remorse of Heorot,136,0,Yes,cannot drop
+Blessing,34,Grand Hope of the Beginning,137,0,Yes,cannot drop
+Blessing,34,Grand Safety of the Labyrinth,138,0,Yes,cannot drop
+Blessing,34,Grand Remnants of the Living,139,0,Yes,cannot drop
+Blessing,34,Grand Visions of Death,140,0,Yes,cannot drop
+Blessing,34,Grand Inevitability of the Void,141,0,Yes,cannot drop
+Blessing,34,Grand Rot of the World,142,0,Yes,cannot drop
+Blessing,34,Grand Boon of the Scarab,143,0,Yes,cannot drop
+Blessing,34,Grand Shadows of Infinity,144,0,Yes,cannot drop
+Blessing,34,Grand Despair of the Empire,145,0,Yes,cannot drop
+Blessing,34,Grand Vigilance of the Damned,146,0,Yes,cannot drop
+Blessing,34,Grand Subtlety of Slaughter,147,0,Yes,cannot drop
+Blessing,34,Grand Apex of Fortune,148,0,Yes,cannot drop
+Blessing,34,Grand Resolve of Humanity,149,0,Yes,cannot drop
+Blessing,34,Grand Survival of Might,150,0,Yes,cannot drop
+Blessing,34,Grand Dream of Eterra,151,0,Yes,cannot drop
+Blessing,34,Grand Binds of Nature,152,0,Yes,cannot drop
+Blessing,34,Grand Despair of Flesh,153,0,Yes,cannot drop
+Blessing,34,Grand Cruelty of Strength,154,0,Yes,cannot drop
+Blessing,34,Grand Hemmorage of Marrow,155,0,Yes,cannot drop
+Blessing,34,Grand Taste of Venom,156,0,Yes,cannot drop
+Blessing,34,Grand Hunger of Dragons,157,0,Yes,cannot drop
+Blessing,34,Grand Virtue of Command,158,0,Yes,cannot drop
+Blessing,34,Grand Persistance of Will,159,0,Yes,cannot drop
+Blessing,34,Grand Guile of Wyrms,160,0,Yes,cannot drop
+Blessing,34,Grand Allure of Apathy,161,0,Yes,cannot drop
+Blessing,34,Temple of the Mind,162,0,Yes,cannot drop
+Blessing,34,Grand Temple of the Mind,163,0,Yes,cannot drop
+Blessing,34,Bastion of the Heart,164,0,Yes,cannot drop
+Blessing,34,Grand Bastion of the Heart,165,0,Yes,cannot drop
+Blessing,34,Binding of Ruin,166,0,Yes,cannot drop
+Blessing,34,Grand Binding of Ruin,167,0,Yes,cannot drop
+Blessing,34,Refuge of Despair,168,0,Yes,cannot drop
+Blessing,34,Grand Refuge of Despair,169,0,Yes,cannot drop
+Blessing,34,Comfort of the End,170,0,Yes,cannot drop
+Blessing,34,Grand Comfort of the End,171,0,Yes,cannot drop
+Blessing,34,Memory of Masters,172,0,Yes,cannot drop
+Blessing,34,Grand Memory of Masters,173,0,Yes,cannot drop
+Blessing,34,Grasp of Hope,174,0,Yes,cannot drop
+Blessing,34,Grand Grasp of Hope,175,0,Yes,cannot drop
+Blessing,34,Remnants of the Elders,176,0,Yes,cannot drop
+Blessing,34,Grand Remnants of the Elders,177,0,Yes,cannot drop
+Blessing,34,Knowledge of Skill,178,0,Yes,cannot drop
+Blessing,34,Grand Knowledge of Skill,179,0,Yes,cannot drop
+Blessing,34,Resolve of Grael,180,0,Yes,cannot drop
+Blessing,34,Grand Resolve of Grael,181,0,Yes,cannot drop
+Blessing,34,Protection of Heorot,182,0,Yes,cannot drop
+Blessing,34,Grand Protection of Heorot,183,0,Yes,cannot drop
+Blessing,34,Vigor of Jormun,184,0,Yes,cannot drop
+Blessing,34,Grand Vigor of Jormun,185,0,Yes,cannot drop
+Blessing,34,Maw of Artor,186,0,Yes,cannot drop
+Blessing,34,Grand Maw of Artor,187,0,Yes,cannot drop
+Blessing,34,Winds of Frost,188,0,Yes,cannot drop
+Blessing,34,Grand Winds of Frost,189,0,Yes,cannot drop
+Blessing,34,Rage of Winter,190,0,Yes,cannot drop
+Blessing,34,Grand Rage of Winter,191,0,Yes,cannot drop
+Blessing,34,Fury of the North,192,0,Yes,cannot drop
+Blessing,34,Grand Fury of the North,193,0,Yes,cannot drop
+Blessing,34,Heart of Ice,194,0,Yes,cannot drop
+Blessing,34,Grand Heart of Ice,195,0,Yes,cannot drop
+Blessing,34,Bones of Eternity,196,0,Yes,cannot drop
+Blessing,34,Grand Bones of Eternity,197,0,Yes,cannot drop
+Blessing,34,Bulwark of the Tundra,198,0,Yes,cannot drop
+Blessing,34,Grand Bulwark of the Tundra,199,0,Yes,cannot drop
+Blessing,34,Defiance of Yulia,200,0,Yes,cannot drop
+Blessing,34,Grand Defiance of Yulia,201,0,Yes,cannot drop
+Blessing,34,Heart of the Caldera,202,0,Yes,cannot drop
+Blessing,34,Grand Heart of the Caldera,203,0,Yes,cannot drop
+Blessing,34,Body of Obsidian,204,0,Yes,cannot drop
+Blessing,34,Grand Body of Obsidian,205,0,Yes,cannot drop
+Blessing,34,Curse of Sulphur,206,0,Yes,cannot drop
+Blessing,34,Grand Curse of Sulphur,207,0,Yes,cannot drop
+Blessing,34,Embers of Immortality,208,0,Yes,cannot drop
+Blessing,34,Grand Embers of Immortality,209,0,Yes,cannot drop
+Blessing,34,Swiftness of Logi,210,0,Yes,cannot drop
+Blessing,34,Grand Swiftness of Logi,211,0,Yes,cannot drop
+Blessing,34,Breath of Cinders,212,0,Yes,cannot drop
+Blessing,34,Grand Breath of Cinders,213,0,Yes,cannot drop
+Blessing,34,Promise of Death,214,0,Yes,cannot drop
+Blessing,34,Grand Promise of Death,215,0,Yes,cannot drop
+Blessing,34,Spirit of Command,216,0,Yes,cannot drop
+Blessing,34,Grand Spirit of Command,217,0,Yes,cannot drop
+Blessing,34,Might of Bhuldar,218,0,Yes,cannot drop
+Blessing,34,Grand Might of Bhuldar,219,0,Yes,cannot drop
+Blessing,34,Flames of Calamity,220,0,Yes,cannot drop
+Blessing,34,Grand Flames of Calamity,221,0,Yes,cannot drop
+Blessing,34,Patience of Herkir,222,0,Yes,cannot drop
+Blessing,34,Grand Patience of Herkir,223,0,Yes,cannot drop
+Greater Lens,35,Obscuring Lens of Battle,0,0,Yes,cannot drop; obsolete
+Greater Lens,35,Obscuring Lens of Time,1,0,Yes,cannot drop; obsolete
+Greater Lens,35,Obscuring Lens of Depths,2,0,Yes,cannot drop; obsolete
+Greater Lens,35,Obscuring Lens of Storytelling,3,0,Yes,cannot drop; obsolete
+Greater Lens,35,Obscuring Lens of Corruption ,4,0,Yes,cannot drop; obsolete
+Greater Lens,35,Refracting Lens of Rhyme,5,0,Yes,cannot drop; obsolete
+Greater Lens,35,Refracting Lens of Wealth,6,0,Yes,cannot drop; obsolete
+Greater Lens,35,Enhancing Lens of the Unmatched,7,0,Yes,cannot drop; obsolete
+Greater Lens,35,Enhancing Lens of the Exalted,8,0,Yes,cannot drop; obsolete
+Greater Lens,35,Enhancing Lens of the Collector,9,0,Yes,cannot drop; obsolete
+Greater Lens,35,Focusing Lens of Time,10,0,Yes,cannot drop; obsolete
+Arctus Lens,36,Focusing Lens of the Path,0,0,Yes,cannot drop; obsolete
+Arctus Lens,36,Focusing Lens of the Alchemy,1,0,Yes,cannot drop; obsolete
+Arctus Lens,36,Focusing Lens of the Crown,2,0,Yes,cannot drop; obsolete
+Arctus Lens,36,Focusing Lens of the Body,3,0,Yes,cannot drop; obsolete
+Arctus Lens,36,Focusing Lens of the Hand,4,0,Yes,cannot drop; obsolete
+Mesembria Lens,37,Focusing Lens of Relics,0,0,Yes,cannot drop; obsolete
+Mesembria Lens,37,Focusing Lens of Rings,1,0,Yes,cannot drop; obsolete
+Mesembria Lens,37,Focusing Lens of Pentacles,2,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Blades,0,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Axes,1,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Clubs,2,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Knives,3,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Wands,4,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Authority,5,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Champions,6,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Cleavers,7,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Hammers,8,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Staves,9,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Spears,10,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Bows,11,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Arrows,12,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Shields,13,0,Yes,cannot drop; obsolete
+Eos Lens,38,Focusing Lens of Orbs,14,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of Shards,0,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of Runes,1,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of Glyphs,2,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of Keys,3,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of the Soil,4,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of Humility,5,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of Chaos,6,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of Grandeur,7,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of Sprires,8,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of Worship,9,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of Mountains,10,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of Faith,11,0,Yes,cannot drop; obsolete
+Dysis Lens,39,Focusing Lens of the Sea,12,0,Yes,cannot drop; obsolete
+Idol Altar,41,Twisted Altar,0,0,Yes,
+Idol Altar,41,Jagged Altar,1,65,Yes,
+Idol Altar,41,Skyward Altar,2,0,Yes,
+Idol Altar,41,Spire Altar,3,0,Yes,
+Idol Altar,41,Carcinised Altar,4,32,Yes,
+Idol Altar,41,Visage Altar,5,0,Yes,
+Idol Altar,41,Lunar Altar,6,0,Yes,
+Idol Altar,41,Ocular Altar,7,32,Yes,
+Idol Altar,41,Archaic Altar,8,50,Yes,
+Idol Altar,41,Impervious Altar,9,65,Yes,
+Idol Altar,41,Prophesied Altar,10,60,Yes,
+Idol Altar,41,Pyramidal Altar,11,76,Yes,
+Idol Altar,41,Auric Altar,12,79,Yes,
+Affix Shard,101,Void Penetration,0,42,No,
+Affix Shard,101,Increased Armor,1,14,No,
+Affix Shard,101,Increased Melee Attack Speed,2,0,No,
+Affix Shard,101,Added Block Chance,3,0,No,
+Affix Shard,101,Increased Cast Speed,4,0,No,
+Affix Shard,101,Increased Critical Strike Chance,5,0,No,
+Affix Shard,101,Added Critical Strike Multiplier,6,20,No,
+Affix Shard,101,Void Resistance,7,6,No,
+Affix Shard,101,Added Dodge Rating,8,0,No,
+Affix Shard,101,Increased Elemental Damage,9,8,No,
+Affix Shard,101,Necrotic Resistance,10,19,No,
+Affix Shard,101,Freeze Rate Multiplier,11,10,No,
+Affix Shard,101,Increased Fire Damage,12,0,No,
+Affix Shard,101,Fire Resistance,13,0,No,
+Affix Shard,101,Freeze Rate Multiplier and Cold Resistance,14,15,No,
+Affix Shard,101,Increased Void Damage,15,15,No,
+Affix Shard,101,Increased Cold Damage,16,0,No,
+Affix Shard,101,Cold Resistance,17,8,No,
+Affix Shard,101,Increased Necrotic Damage,18,6,No,
+Affix Shard,101,Poison Resistance,19,10,No,
+Affix Shard,101,Health On Kill,20,0,No,
+Affix Shard,101,Primalist Added Spell Damage With Tempest Strike,21,26,No,
+Affix Shard,101,Increased Health Regen,22,0,No,
+Affix Shard,101,Increased Lightning Damage,23,0,No,
+Affix Shard,101,Lightning Resistance,24,0,No,
+Affix Shard,101,Added Health,25,0,No,
+Affix Shard,101,Increased Minion Damage,26,0,No,
+Affix Shard,101,Increased Cooldown Recovery Speed,27,6,No,
+Affix Shard,101,Increased Movement Speed,28,0,No,
+Affix Shard,101,Health and Stun Avoidance,29,46,No,
+Affix Shard,101,Increased Physical Damage,30,0,No,
+Affix Shard,101,Added Armor,31,0,No,
+Affix Shard,101,Fire Penetration,32,42,No,
+Affix Shard,101,Physical Penetration,33,42,No,
+Affix Shard,101,Added Mana,34,0,No,
+Affix Shard,101,Cold Penetration,35,42,No,
+Affix Shard,101,Hybrid Health,36,45,No,
+Affix Shard,101,Poison Penetration,37,42,No,
+Affix Shard,101,Increased Spell Damage,38,0,No,
+Affix Shard,101,Lightning Penetration,39,42,No,
+Affix Shard,101,Leech Rate,40,0,No,
+Affix Shard,101,Health Gained on Block,41,15,No,
+Affix Shard,101,Lightning Damage And Leech,42,18,No,
+Affix Shard,101,Increased Healing Effectiveness,43,15,No,
+Affix Shard,101,Health On Melee Hit,44,0,No,
+Affix Shard,101,Physical Resistance,45,0,No,
+Affix Shard,101,All Resistances,46,55,No,
+Affix Shard,101,Chance To Chill Attackers,47,16,No,
+Affix Shard,101,Chance To Slow Attackers,48,16,No,
+Affix Shard,101,Added Spell Damage For Swords,49,15,No,
+Affix Shard,101,All Attributes,50,13,No,
+Affix Shard,101,Added Stun Avoidance,51,13,No,
+Affix Shard,101,Increased Health,52,25,No,
+Affix Shard,101,Damage Dealt To Mana,53,40,No,
+Affix Shard,101,Chance To Poison,54,13,No,
+Affix Shard,101,Chance To Ignite,55,0,No,
+Affix Shard,101,Chance To Chill,56,0,No,
+Affix Shard,101,Chance To Slow,57,0,No,
+Affix Shard,101,Increased Stun Chance,58,0,No,
+Affix Shard,101,Increased Dodge Rating,59,16,No,
+Affix Shard,101,Chance To Blind,60,5,No,
+Affix Shard,101,Increased Poison Damage,61,11,No,
+Affix Shard,101,Added Melee Crit Chance,62,0,No,
+Affix Shard,101,Added Melee Physical Damage,63,0,No,
+Affix Shard,101,Minion Melee and Bow Damage,64,20,No,
+Affix Shard,101,Increased Chance To Find Potions,65,5,No,
+Affix Shard,101,Ward On Potion Use,66,10,No,
+Affix Shard,101,Freeze Rate and Freezing Concoction on Potion Use,67,35,No,
+Affix Shard,101,Chance to Inflict Bleed,68,0,No,
+Affix Shard,101,Melee Health Leech,69,10,No,
+Affix Shard,101,Minion Health,70,6,No,
+Affix Shard,101,Minion Dodge Rating,71,30,No,
+Affix Shard,101,Increased Damage Over Time,72,0,No,
+Affix Shard,101,Minion Health Regen,73,13,No,
+Affix Shard,101,Less Damage Taken on Block,74,0,No,
+Affix Shard,101,Ward and Ailment Cleansing on Potion Use,75,31,No,
+Affix Shard,101,Added Melee Void Damage,76,0,No,
+Affix Shard,101,Added Melee Fire Damage,77,0,No,
+Affix Shard,101,Added Melee Cold Damage,78,0,No,
+Affix Shard,101,Added Melee Lightning Damage,79,0,No,
+Affix Shard,101,Elemental Resistance,80,27,No,
+Affix Shard,101,Added Block Effectiveness,81,0,No,
+Affix Shard,101,Extra Potion Slot And Potion Health,82,15,No,
+Affix Shard,101,Potion Health Converted to Ward,83,35,No,
+Affix Shard,101,Increased Spell Crit Chance,84,15,No,
+Affix Shard,101,Chance To Shock,85,20,No,
+Affix Shard,101,Armor Shred Chance,86,27,No,
+Affix Shard,101,Increased Throwing Attack Speed,87,17,No,
+Affix Shard,101,Added Throwing Damage,88,0,No,
+Affix Shard,101,Increased Melee Damage,89,0,No,
+Affix Shard,101,Health Regen,90,0,No,
+Affix Shard,101,Increased Melee Stun Chance,91,0,No,
+Affix Shard,101,Endurance,92,19,No,
+Affix Shard,101,Necrotic Penetration,93,42,No,
+Affix Shard,101,Chance To Shock Attackers,94,33,No,
+Affix Shard,101,Thorns,95,4,No,
+Affix Shard,101,Percent Damage Reflected,96,23,No,
+Affix Shard,101,Critical Strike Avoidance and Added Dodge Rating,97,36,No,
+Affix Shard,101,Increased Minion Damage Over Time,98,48,No,
+Affix Shard,101,Ward Gained on Kill,99,40,No,
+Affix Shard,101,Increased Elemental Damage Over Time,100,50,No,
+Affix Shard,101,Increased Area for Area Skills,101,32,No,
+Affix Shard,101,Minion Spell and Bow Damage,102,22,No,
+Affix Shard,101,Damage While Channelling,103,38,No,
+Affix Shard,101,All Resistances While Channelling,104,46,No,
+Affix Shard,101,Acolyte +1 Skeleton and Increased Skeleton Damage,192,60,No,
+Affix Shard,101,Increased Mana Regen,330,0,No,
+Affix Shard,101,Increased Mana,331,0,No,
+Affix Shard,101,Primalist Armor And Minion Armor,332,27,No,
+Affix Shard,101,Primalist Shared Lightning Damage,333,48,No,
+Affix Shard,101,Primalist Totem Added Spell Damage,334,53,No,
+Affix Shard,101,Primalist Cooldown Recovery Speed While Transformed,335,43,No,
+Affix Shard,101,Primalist Minion Crit Multiplier,336,36,No,
+Affix Shard,101,Primalist Minion Spell Crit Chance,337,41,No,
+Affix Shard,101,Primalist Criti Multi While Transformed,338,48,No,
+Affix Shard,101,Mage Cold Penetration With Frostbite,339,34,No,
+Affix Shard,101,Primalist Shared Cold Damage,340,36,No,
+Affix Shard,101,Freeze Rate Per Stack of Chill,341,42,No,
+Affix Shard,101,Primalist Totem Increased Cast Speed,342,27,No,
+Affix Shard,101,Primalist Shared Bleed Duration,343,34,No,
+Affix Shard,101,Primalist Shared Increased Spell Damage,344,27,No,
+Affix Shard,101,Primalist Shared Increased Melee Damage,345,48,No,
+Affix Shard,101,Primalist Minion Melee Leech,346,29,No,
+Affix Shard,101,Primalist Minion Chance to Inflict Bleed On Hit,347,36,No,
+Affix Shard,101,Primalist Minion Melee Crit Chance,348,46,No,
+Affix Shard,101,Primalist Melee Damage While Transformed,349,28,No,
+Affix Shard,101,Primalist Spell Damage While Transformed,350,39,No,
+Affix Shard,101,Primalist Damage Over Time While Transformed,351,41,No,
+Affix Shard,101,Primalist Increased Totem Crit Chance,352,57,No,
+Affix Shard,101,Primalist Increased Aspect Of The Shark Effect,353,29,No,
+Affix Shard,101,Primalist Increased Aspect Of The Boar Duration,354,36,No,
+Affix Shard,101,Primalist Increased Aspect Of The Viper Effect,355,46,No,
+Affix Shard,101,Primalist Increased Aspect Of The Lynx Effect,356,51,No,
+Affix Shard,101,Primalist Increased Totem Damage,357,30,No,
+Affix Shard,101,Sentinel Physical Penetration With Bleed,358,50,No,
+Affix Shard,101,Sentinel Melee Physical Damage If Wielding A Sword,359,48,No,
+Affix Shard,101,Sentinel Increased Physical Damage And Bleed Duration,360,60,No,
+Affix Shard,101,Sentinel Increased Fire Damage And Ignite Duration,361,55,No,
+Affix Shard,101,Sentinel Increased Void Damage And Added Spell Void Damage,362,53,No,
+Affix Shard,101,Sentinel Chance to Inflict Bleed If Wielding An Axe,363,41,No,
+Affix Shard,101,Sentinel Melee Physical Damage If Wielding A Mace,364,57,No,
+Affix Shard,101,Sentinel Void Damage Taken As Physical,365,34,No,
+Affix Shard,101,Sentinel Necrotic Damage Taken As Physical,366,34,No,
+Affix Shard,101,Sentinel Poison Damage Taken As Physical,367,34,No,
+Affix Shard,101,Sentinel Increased Throwing Attack Crit Chance,368,48,No,
+Affix Shard,101,Sentinel Reduced Channel Cost,369,36,No,
+Affix Shard,101,Sentinel Armor Shred Effect,370,55,No,
+Affix Shard,101,Sentinel Increased Fire Damage Over Time,371,32,No,
+Affix Shard,101,Sentinel Increased Void Damage Over Time,372,32,No,
+Affix Shard,101,Sentinel Increased Echo Damage When A Skill Echoes,373,60,No,
+Affix Shard,101,Sentinel Increased Abyssal Decay Duration,374,43,No,
+Affix Shard,101,Sentinel Mana Gained On Vengeance Hit,375,12,No,
+Affix Shard,101,Sentinel Mana Gained On Rive Hit,376,12,No,
+Affix Shard,101,Sentinel Mana Gained On Smite Use,377,23,No,
+Affix Shard,101,Sentinel Increased Hammer Throw Damage,378,4,No,
+Affix Shard,101,Sentinel Increased Shield Throw Crit Chance,379,18,No,
+Affix Shard,101,Sentinel Increased Smelters Wrath Damage,380,50,No,
+Affix Shard,101,Mage Spell Crit Doubled Over 300 Max Mana,381,48,No,
+Affix Shard,101,Ward Per Second,382,22,No,
+Affix Shard,101,Mage Added Spell Damage While Channelling,383,43,No,
+Affix Shard,101,Acolyte Minion Freeze Rate,384,53,No,
+Affix Shard,101,Mage Lightning Crit Multi,385,60,No,
+Affix Shard,101,Mage Spell Damage Leeched While Channelling,386,46,No,
+Affix Shard,101,Mage Chance To Apply Frostbite With Cold Skills,387,27,No,
+Affix Shard,101,Mage Increased Cold Damage Over Time,388,25,No,
+Affix Shard,101,Mage Increased Fire Damage Over Time,389,25,No,
+Affix Shard,101,Mage Increased Melee Elemental Damage,390,36,No,
+Affix Shard,101,Mage Chance To Ignite With Fire Skills,391,41,No,
+Affix Shard,101,Mage Chance To Shock With Lightning Skills,392,41,No,
+Affix Shard,101,Mage Chance To Cast Fire Aura On Crit,393,57,No,
+Affix Shard,101,Mage Increased Fire Aura Damage,394,29,No,
+Affix Shard,101,Mage Chance To Gain Lightning Aegis When Hit,395,43,No,
+Affix Shard,101,Mage Chance To Cast Fire Aura When Hit,396,27,No,
+Affix Shard,101,Flame Ward Charge and Added Ward,397,60,No,
+Affix Shard,101,Mage Chance To Cast Fire Aura On Kill With A Fire Skill,398,29,No,
+Affix Shard,101,Mage Chance to Apply a Spark Charge on Melee Hit,399,32,No,
+Affix Shard,101,Mage Mana Spent Gained as Ward,400,39,No,
+Affix Shard,101,Acolyte Physical Damage While Transformed,401,25,No,
+Affix Shard,101,Acolyte Necrotic Damage While Transformed,402,25,No,
+Affix Shard,101,Acolyte Shared Increased Fire Damage,404,36,No,
+Affix Shard,101,Acolyte Shared Increased Necrotic Damage,405,36,No,
+Affix Shard,101,Acolyte Shared Bleed Chance,406,57,No,
+Affix Shard,101,Acolyte Shared Increased Bleed Duration,407,57,No,
+Affix Shard,101,Acolyte Shared Physical Penetration With Bleed,408,57,No,
+Affix Shard,101,Acolyte Shared Physical Leech,409,60,No,
+Affix Shard,101,Acolyte Increased Skeletal Mage Damage,410,45,No,
+Affix Shard,101,Acolyte Mana Gained On Harvest Use,411,13,No,
+Affix Shard,101,Acolyte Leech With Harvest,412,6,No,
+Affix Shard,101,Acolyte Minion Reflect,413,25,No,
+Affix Shard,101,Acolyte Poison Damage And Poison Resistance,414,32,No,
+Affix Shard,101,Acolyte Chance To Gain 20 Ward On Kill With Hungering Souls,415,8,No,
+Affix Shard,101,Acolyte Shared Increased Crit Chance,416,29,No,
+Affix Shard,101,Acolyte More Damage Over Time to Bleeding Enemies for Marrow Shards,417,45,No,
+Affix Shard,101,Acolyte Increased Damage With Rip Blood And Blood Splatter,418,45,No,
+Affix Shard,101,Acolyte Critical Strike Chance For Skeletons And Skeletal Mages,419,25,No,
+Affix Shard,101,Acolyte Spell Damage Per Skeletal Mage,420,25,No,
+Affix Shard,101,Acolyte Chance To Apply Damned On Hit,421,34,No,
+Affix Shard,101,Acolyte Damage Leeched As Health While Transformed,422,27,No,
+Affix Shard,101,Acolyte Reduced Health Cost Of Spells,423,13,No,
+Affix Shard,101,Acolyte Physical Spell Critical Strike Chance,424,41,No,
+Affix Shard,101,Endurance Threshold,425,24,No,
+Affix Shard,101,Block Chance and Effectiveness,426,13,No,
+Affix Shard,101,Less Bonus Damage Taken from Critical Strikes,427,36,No,
+Affix Shard,101,Melee Frailty Chance,428,25,No,
+Affix Shard,101,Frailty Chance,429,25,No,
+Affix Shard,101,Increased Bow Damage,431,0,No,
+Affix Shard,101,Increased Bow Attack Speed,432,0,No,
+Affix Shard,101,Added Bow Physical Damage,433,0,No,
+Affix Shard,101,Added Bow Fire Damage,434,0,No,
+Affix Shard,101,Acolyte Chance To Cast Marrow Shards When You Cast Transplant,435,13,No,
+Affix Shard,101,Rogue Ward Gained when you create a Shadow,437,18,No,
+Affix Shard,101,Rogue Increased Damage of Shadows,439,35,No,
+Affix Shard,101,Rogue Health Gained on Glancing Blow,440,32,No,
+Affix Shard,101,Rogue Dodge Rating if Hit Recently,442,25,No,
+Affix Shard,101,Rogue Crimson Shroud Chance on Melee Hit,443,48,No,
+Affix Shard,101,Rogue Increased Critical Strike Chance per Equipped Sword,446,41,No,
+Affix Shard,101,Rogue Increased Critical Strike Chance per Equipped Dagger,448,41,No,
+Affix Shard,101,Rogue Chance to gain Dusk Shroud When Hit,449,43,No,
+Affix Shard,101,Rogue Bleed Chance per Equipped Sword,451,27,No,
+Affix Shard,101,Rogue Poison Chance per Equipped Dagger,453,27,No,
+Affix Shard,101,Rogue Dusk Shroud Chance on Melee Hit,454,36,No,
+Affix Shard,101,Rogue Added Physical Throwing Damage while dual wielding,457,55,No,
+Affix Shard,101,Rogue Increased damage while wielding a sword,459,29,No,
+Affix Shard,101,Rogue Increased damage while wielding a dagger,461,29,No,
+Affix Shard,101,Rogue Increased damage while wielding a bow,463,29,No,
+Affix Shard,101,Rogue Fire Penetration With Ignite,468,55,No,
+Affix Shard,101,Rogue Increased Poison Duration,469,55,No,
+Affix Shard,101,Rogue Increased Throwing Physical Damage,471,41,No,
+Affix Shard,101,Rogue Chance to Shred Armor on Throwing Hit,473,50,No,
+Affix Shard,101,Rogue Chance to Shred Armor on Melee Hit,475,50,No,
+Affix Shard,101,Rogue Chance to Shred Armor on Bow Hit,477,27,No,
+Affix Shard,101,Rogue Armor Shred Effect,479,27,No,
+Affix Shard,101,Rogue Increased Armor Shred Duration,481,27,No,
+Affix Shard,101,Rogue Chance to Ignite on Bow Hit,483,55,No,
+Affix Shard,101,Rogue Chance to Slow on Bow Hit,485,57,No,
+Affix Shard,101,Rogue Physical Penetration With Shadow Daggers,487,55,No,
+Affix Shard,101,Rogue Increased Bow Elemental Damage,489,27,No,
+Affix Shard,101,Rogue Chance to Inflict Bleed on Bow Hit,494,27,No,
+Affix Shard,101,Rogue Increased Area with Cinder Strike's First Strike,496,10,No,
+Affix Shard,101,Rogue Increased crit chance with Flurry,498,4,No,
+Affix Shard,101,Rogue Physical penetration with Puncture,500,5,No,
+Affix Shard,101,Strength,501,0,No,
+Affix Shard,101,Intelligence,502,0,No,
+Affix Shard,101,Dexterity,503,0,No,
+Affix Shard,101,Attunement,504,5,No,
+Affix Shard,101,Vitality,505,0,No,
+Affix Shard,101,Spell Damage and Reduced Mana Cost,506,0,No,
+Affix Shard,101,Throwing Damage and Reduced Mana Cost,507,6,No,
+Affix Shard,101,Rogue Increased Area with Detonating Arrow,509,25,No,
+Affix Shard,101,Rogue Increased damage per arrow with Multishot,511,25,No,
+Affix Shard,101,Rogue Increased Hail of Arrows Duration,513,50,No,
+Affix Shard,101,Rogue Increased damage per active Shadow with Shadow Cascade,515,25,No,
+Affix Shard,101,Rogue Bleed Chance with Shurikens,517,14,No,
+Affix Shard,101,Rogue Lightning Damage with Shurikens,519,4,No,
+Affix Shard,101,Rogue Increased Acid Flask Area,521,4,No,
+Affix Shard,101,Rogue Increased Dancing Strikes Area,524,25,No,
+Affix Shard,101,Rogue Mana efficiency with Synchronised Strike,526,30,No,
+Affix Shard,101,Rogue Mana efficiency with Decoy,528,13,No,
+Affix Shard,101,Rogue Ward gained on use with Smoke Bomb,530,8,No,
+Affix Shard,101,Rogue Ward gained on use with Shift,532,4,No,
+Affix Shard,101,Rogue Black Arrows dropped by Dark Quiver and Increased Bow Damage,534,35,No,
+Affix Shard,101,Rogue Max Ballista and Increased Ballista Attack Speed,536,18,No,
+Affix Shard,101,Rogue Mirages and Mana Efficiency with Lethal Mirage,537,50,No,
+Affix Shard,101,Primalist Level of Swipe,539,6,No,
+Affix Shard,101,Primalist Level of Summon Wolf,540,4,No,
+Affix Shard,101,Primalist Level of Tornado,541,25,No,
+Affix Shard,101,Primalist Level of Fury Leap,542,4,No,
+Affix Shard,101,Primalist Level of Summon Thorn Totem,543,4,No,
+Affix Shard,101,Primalist Level of Summon Spriggan,544,30,No,
+Affix Shard,101,Primalist Level of Summon Frenzy Totem,545,35,No,
+Affix Shard,101,Mage Level of Elemental Nova,546,4,No,
+Affix Shard,101,Mage Level of Mana Strike,547,6,No,
+Affix Shard,101,Mage Fireball Pierce Chance,548,18,No,
+Affix Shard,101,Mage Level of Fireball,549,7,No,
+Affix Shard,101,Mage Level of Glacier,550,7,No,
+Affix Shard,101,Mage Level of Meteor,551,25,No,
+Affix Shard,101,Mage Level of Teleport,552,12,No,
+Affix Shard,101,Mage Level of Volcanic Orb,553,17,No,
+Affix Shard,101,Mage Level of Black Hole,554,50,No,
+Affix Shard,101,Primalist Level of Summon Bear,555,25,No,
+Affix Shard,101,Mage Level of Static Orb,556,4,No,
+Affix Shard,101,Mage Level of Lightning Blast,557,4,No,
+Affix Shard,101,Primalist Level of Serpent Strike,558,22,No,
+Affix Shard,101,Primalist Level of Entangling Roots,559,25,No,
+Affix Shard,101,Sentinel Level of Anomaly,560,50,No,
+Affix Shard,101,Sentinel Level of Warpath,561,4,No,
+Affix Shard,101,Sentinel Level of Devouring Orb,562,35,No,
+Affix Shard,101,Sentinel Level of Rive,563,6,No,
+Affix Shard,101,Sentinel Level of Hammer Throw,564,4,No,
+Affix Shard,101,Sentinel Level of Shield Rush,565,12,No,
+Affix Shard,101,Sentinel Level of Volatile Reversal,566,25,No,
+Affix Shard,101,Sentinel Level of Abyssal Echoes,567,30,No,
+Affix Shard,101,Sentinel Level of Erasing Strike,568,25,No,
+Affix Shard,101,Sentinel Level of Vengeance,569,4,No,
+Affix Shard,101,Sentinel Level of Shield Throw,570,17,No,
+Affix Shard,101,Acolyte Level of Dread Shade,571,50,No,
+Affix Shard,101,Acolyte Level of Summon Skeleton,572,4,No,
+Affix Shard,101,Acolyte Level of Infernal Shade,573,22,No,
+Affix Shard,101,Acolyte Level of Sacrifice,574,30,No,
+Affix Shard,101,Mage Level of Focus,575,22,No,
+Affix Shard,101,Acolyte Level of Aura Of Decay,576,30,No,
+Affix Shard,101,Acolyte Level of Hungering Souls,577,7,No,
+Affix Shard,101,Acolyte Level of Rip Blood,578,4,No,
+Affix Shard,101,Acolyte Level of Summon Wraith,579,25,No,
+Affix Shard,101,Acolyte Level of Summon Bone Golem,580,12,No,
+Affix Shard,101,Acolyte Level of Wandering Spirits,581,4,No,
+Affix Shard,101,Acolyte Level of Marrow Shards,582,4,No,
+Affix Shard,101,Acolyte Level of Transplant,583,13,No,
+Affix Shard,101,Mage Level of Flame Reave,584,25,No,
+Affix Shard,101,Primalist Level of Summon Storm Totem,585,25,No,
+Affix Shard,101,Acolyte Level of Soul Feast,586,35,No,
+Affix Shard,101,Mage Level of Snap Freeze,587,4,No,
+Affix Shard,101,Sentinel Level of Lunge,588,4,No,
+Affix Shard,101,Sentinel Level of Rebuke,589,7,No,
+Affix Shard,101,Primalist Level of Summon Sabertooth,590,12,No,
+Affix Shard,101,Primalist Level of Summon Scorpion,591,30,No,
+Affix Shard,101,Sentinel Level of Ring Of Shields,592,25,No,
+Affix Shard,101,Mage Level of Firebrand,593,50,No,
+Affix Shard,101,Acolyte Level of Harvest,594,6,No,
+Affix Shard,101,Primalist Level of Eterra's Blessing,595,7,No,
+Affix Shard,101,Sentinel Level of Judgement,596,50,No,
+Affix Shard,101,Mage Level of Shatter Strike,597,25,No,
+Affix Shard,101,Mage Level of Enchant Weapon,598,30,No,
+Affix Shard,101,Primalist Level of Avalanche,599,40,No,
+Affix Shard,101,Sentinel Level of Symbols Of Hope,600,35,No,
+Affix Shard,101,Sentinel Level of Holy Aura,601,25,No,
+Affix Shard,101,Primalist Level of Werebear Form,602,25,No,
+Affix Shard,101,Sentinel Level of Smite,603,22,No,
+Affix Shard,101,Sentinel Level of Manifest Armor,604,35,No,
+Affix Shard,101,Sentinel Level of Forge Strike,605,25,No,
+Affix Shard,101,Primalist Level of Spriggan Form,606,35,No,
+Affix Shard,101,Acolyte Level of Reaper Form,607,25,No,
+Affix Shard,101,Rogue Level of Acid Flask,608,4,No,
+Affix Shard,101,Rogue Level of Shadow Cascade,609,25,No,
+Affix Shard,101,Rogue Level of Flurry,610,4,No,
+Affix Shard,101,Rogue Level of Shurikens,611,4,No,
+Affix Shard,101,Rogue Level of Dancing Strikes,612,25,No,
+Affix Shard,101,Rogue Level of Multishot,613,25,No,
+Affix Shard,101,Rogue Level of Puncture,614,5,No,
+Affix Shard,101,Rogue Level of Decoy,615,12,No,
+Affix Shard,101,Rogue Level of Cinder Strike,616,10,No,
+Affix Shard,101,Rogue Level of Detonating Arrow,617,25,No,
+Affix Shard,101,Rogue Level of Hail of Arrows,618,50,No,
+Affix Shard,101,Rogue Level of Shift,619,4,No,
+Affix Shard,101,Rogue Level of Synchronized Strike,620,30,No,
+Affix Shard,101,Primalist Level of Tempest Strike,621,10,No,
+Affix Shard,101,Primalist Level of Gathering Storm,622,4,No,
+Affix Shard,101,Acolyte Level of Summon Skeletal Mage,623,25,No,
+Affix Shard,101,Mage Level of Static,624,40,No,
+Affix Shard,101,Mage Level of Disintegrate,625,35,No,
+Affix Shard,101,Primalist Level of Maelstrom,626,17,No,
+Affix Shard,101,Primalist Level of Summon Raptor,627,25,No,
+Affix Shard,101,Mage Level of Flame Ward,628,9,No,
+Affix Shard,101,Primalist Level of Earthquake,629,30,No,
+Affix Shard,101,Mage Level of Arcane Ascendance,630,40,No,
+Affix Shard,101,Sentinel Level of Smelter's Wrath,631,50,No,
+Affix Shard,101,Acolyte Level of Drain Life,632,25,No,
+Affix Shard,101,Acolyte Level of Assemble Abomination,633,60,No,
+Affix Shard,101,Acolyte Level of Spirit Plague,634,17,No,
+Affix Shard,101,Acolyte Level of Bone Curse,635,8,No,
+Affix Shard,101,Acolyte Level of Death Seal,636,50,No,
+Affix Shard,101,Mage Level of Ice Barrage,637,25,No,
+Affix Shard,101,Rogue Level of Dark Quiver,638,35,No,
+Affix Shard,101,Sentinel Level of Shield Bash,639,8,No,
+Affix Shard,101,Rogue Level of Ballista,640,17,No,
+Affix Shard,101,Rogue Level of Lethal Mirage,641,50,No,
+Affix Shard,101,Rogue Level of Smoke Bomb,642,7,No,
+Affix Shard,101,Minion Melee and Spell Damage,643,18,No,
+Affix Shard,101,Primalist Level of Warcry,644,14,No,
+Affix Shard,101,Mage Level of Surge,645,55,No,
+Affix Shard,101,Primalist Level of Summon Storm Crow,646,20,No,
+Affix Shard,101,Acolyte Level of Summon Volatile Zombie,647,20,No,
+Affix Shard,101,Primalist Storm Crow Added Spell Damage,648,36,No,
+Affix Shard,101,Acolyte Volatile Zombie Speed and Damage,649,28,No,
+Affix Shard,101,Sentinel Level of Multistrike,652,17,No,
+Affix Shard,101,Sentinel Level of Void Cleave,653,19,No,
+Affix Shard,101,Sentinel Level of Javelin,654,17,No,
+Affix Shard,101,Sentinel Added Lightning Throwing Damage with Javelin,655,22,No,
+Affix Shard,101,Sentinel Endurance While Warpathing,656,5,No,
+Affix Shard,101,Primalist Level of Swarmblade Form,660,43,No,
+Affix Shard,101,Primalist Level of Upheaval,661,15,No,
+Affix Shard,101,Rogue Level of Umbral Blades,662,16,No,
+Affix Shard,101,Primalist Armor Shred Chance for Locusts,663,49,No,
+Affix Shard,101,Primalist Upheaval Shockwave Chance,665,38,No,
+Affix Shard,101,Primalist Attack and Cast Speed for Summoned Vines,666,33,No,
+Affix Shard,101,Primalist Critical Strike Chance with Rampage,667,42,No,
+Affix Shard,101,Added Bow Lightning Damage,669,8,No,
+Affix Shard,101,Added Bow Cold Damage,670,0,No,
+Affix Shard,101,Area for Melee Area Skills,671,30,No,
+Affix Shard,101,Crit Chance and Bow Attack Speed,672,44,No,
+Affix Shard,101,Mage Level of Flame Rush,680,23,No,
+Affix Shard,101,Mage Level of Runebolt,681,40,No,
+Affix Shard,101,Mage Level of Runic Invocation,682,20,No,
+Affix Shard,101,Mage Level of Frostwall,683,35,No,
+Affix Shard,101,Mage Level of Glyph of Dominion,684,49,No,
+Affix Shard,101,Mage Ward per Second on Glyph of Dominion,687,49,No,
+Affix Shard,101,Mage Flame Rush Speed,688,26,No,
+Affix Shard,101,Mage Mana on Runebolt or Fireball Cast,690,17,No,
+Affix Shard,101,Mage Ward per Rune consumed with Runic Invocation,691,29,No,
+Affix Shard,101,Mage Penetration with Fire Invocations,693,39,No,
+Affix Shard,101,Mage Penetration with Cold Invocations,694,39,No,
+Affix Shard,101,Mage Frost Wall Duration and Frostbite Chance,695,35,No,
+Affix Shard,101,Mage Penetration with Lightning Invocations,696,39,No,
+Affix Shard,101,Mage Level of Frost Claw,709,49,No,
+Affix Shard,101,Armor and Reduced Bonus Damage from Crits,715,40,No,
+Affix Shard,101,Parry Chance,717,24,No,
+Affix Shard,101,Mana and Mana Regen,718,36,No,
+Affix Shard,101,Physical Penetration and Minion Physical Penetration,719,60,No,
+Affix Shard,101,Fire Penetration and Minion Fire Penetration,720,60,No,
+Affix Shard,101,Cold Penetration and Minion Cold Penetration,721,60,No,
+Affix Shard,101,Lightning Penetration and Minion Lightning Penetration,722,60,No,
+Affix Shard,101,Void Penetration and Minion Void Penetration,723,60,No,
+Affix Shard,101,Necrotic Penetration and Minion Necrotic Penetration,724,60,No,
+Affix Shard,101,Poison Penetration and Minion Poison Penetration,725,60,No,
+Affix Shard,101,Sentinel Level of Healing Hands,726,23,No,
+Affix Shard,101,Rogue Level of Falconry,727,20,No,
+Affix Shard,101,Rogue Level of Dive Bomb,728,20,No,
+Affix Shard,101,Rogue Level of Explosive Trap,729,50,No,
+Affix Shard,101,Rogue Level of Aerial Assault,730,25,No,
+Affix Shard,101,Rogue Level of Net,731,25,No,
+Affix Shard,101,Acolyte Level of Profane Veil,732,25,No,
+Affix Shard,101,Acolyte Level of Chthonic Fissure,733,23,No,
+Affix Shard,101,Acolyte Level of Chaos Bolts,734,50,No,
+Affix Shard,101,Acolyte Level of Ghostflame,735,50,No,
+Affix Shard,101,Primalist Chance to Gain Additional Storm Stack,737,26,No,
+Affix Shard,101,Rogue Damage and Area with Dive Bomb,739,48,No,
+Affix Shard,101,Acolyte Additional Projectile Chance with Chaos Bolts,747,41,No,
+Affix Shard,101,Acolyte Increased Spirit Frequency with Chthonic Fissure,748,13,No,
+Affix Shard,101,Acolyte Added Spell Damage for Curses,749,26,No,
+Affix Shard,101,Mana and Mana Spent Gained as Ward,759,43,No,
+Affix Shard,101,Dodge while Evading and Increased Dodge Rating,760,35,No,
+Affix Shard,101,Rogue Level of Heartseeker,761,50,No,
+Affix Shard,101,Rogue Recurve Chance with Heartseeker,762,26,No,
+Affix Shard,101,Sentinel Chance To Electrify with Lightning Skills,764,27,No,
+Affix Shard,101,Sentinel Chance To Inflict Time Rot on hit with Void Skills,765,27,No,
+Affix Shard,101,Boardman's Fallacy Reforged,780,0,No,
+Affix Shard,101,Boardman's Legacy Reforged,781,0,No,
+Affix Shard,101,Boardman's Plank Reforged,782,0,No,
+Affix Shard,101,Corsair's Blood Cowl Reforged,783,0,No,
+Affix Shard,101,Corsair's Boarding Shield Reforged,784,0,No,
+Affix Shard,101,Ferebor's Persistence Reforged,785,0,No,
+Affix Shard,101,Ferebor's Chisel Reforged,786,0,No,
+Affix Shard,101,Blade of the Forgotten Knight Reforged,787,0,No,
+Affix Shard,101,Defiance of the Forgotten Knight Reforged,788,0,No,
+Affix Shard,101,Locket of the Forgotten Knight Reforged,789,0,No,
+Affix Shard,101,Gaspar's Acuity Reforged,790,0,No,
+Affix Shard,101,Gaspar's Insight Reforged,791,0,No,
+Affix Shard,101,Gaspar's Will Reforged,792,0,No,
+Affix Shard,101,Halvar's Pledge Reforged,793,0,No,
+Affix Shard,101,Halvar's Stand Reforged,794,0,No,
+Affix Shard,101,Last Gift of the Mountain Reforged,795,0,No,
+Affix Shard,101,The Invoker's Frozen Heart Reforged,796,0,No,
+Affix Shard,101,The Invoker's Scorching Grasp Reforged,797,0,No,
+Affix Shard,101,The Invoker's Static Touch Reforged,798,0,No,
+Affix Shard,101,Isadora's Revenge Reforged,799,0,No,
+Affix Shard,101,Isadora's Gravechill Reforged,800,0,No,
+Affix Shard,101,Isadora's Tomb Binding Reforged,801,0,No,
+Affix Shard,101,The Last Bear's Lament Reforged,802,0,No,
+Affix Shard,101,The Last Bear's Scorn Reforged,803,0,No,
+Affix Shard,101,The Last Bear's Fury Reforged,804,0,No,
+Affix Shard,101,Lich's Envy Reforged,805,0,No,
+Affix Shard,101,Lich's Scorn Reforged,806,0,No,
+Affix Shard,101,Pebbles' Bitemarked Sash Reforged,807,0,No,
+Affix Shard,101,Pebbles' Femur Reforged,808,0,No,
+Affix Shard,101,Pebbles' Collar Reforged,809,0,No,
+Affix Shard,101,Ruby Fang Cleaver Reforged,810,0,No,
+Affix Shard,101,Ruby Fang Aegis Reforged,811,0,No,
+Affix Shard,101,Shard of the Shattered Lance Reforged,812,0,No,
+Affix Shard,101,Fragments of the Shattered Lance Reforged,813,0,No,
+Affix Shard,101,Sinathia's Dying Breath Reforged,814,0,No,
+Affix Shard,101,Sinathia's Resurrection Reforged,815,0,No,
+Affix Shard,101,Sunforged Greathelm Reforged,816,0,No,
+Affix Shard,101,Sunforged Cuirass Reforged,817,0,No,
+Affix Shard,101,Sunforged Hammer Reforged,818,0,No,
+Affix Shard,101,Vilatria's Downfall Reforged,819,0,No,
+Affix Shard,101,Vilatria's Storm Crown Reforged,820,0,No,
+Affix Shard,101,Zerrick's Guile Reforged,821,0,No,
+Affix Shard,101,Zerrick's Greed Reforged,822,0,No,
+Affix Shard,101,Zerrick's Ambition Reforged,823,0,No,
+Affix Shard,101,Ward Per Second and Ward Decay Threshold,824,0,No,
+Affix Shard,101,Added Health and Added Health Regeneration,825,0,No,
+Affix Shard,101,Added Melee And Spell Necrotic Damage,943,35,No,
+Affix Shard,101,Acolyte Level of Flay,944,50,No,
+Affix Shard,101,Minion Area and Damage,945,46,No,
+Affix Shard,101,Doppelganger's Mimicry Reforged,946,0,No,
+Affix Shard,101,Doppelganger's Deception Reforged,947,0,No,
+Affix Shard,101,Doppelganger's Facade Reforged,948,0,No,
+Affix Shard,101,Abandoned Chitin of the Weaver Reforged,949,0,No,
+Affix Shard,101,Abandoned Eyes of the Weaver Reforged,950,0,No,
+Affix Shard,101,Apiarist's Comb Reforged,953,0,No,
+Affix Shard,101,Apiarist's Smoker Reforged,954,0,No,
+Affix Shard,101,Apiarist's Suit Reforged,955,0,No,
+Affix Shard,101,Jormun's Feast Reforged,956,0,No,
+Affix Shard,101,Jormun's Hunger Reforged,957,0,No,
+Affix Shard,101,Jormun's Thirst Reforged,958,0,No,
+Affix Shard,101,Keplahan's Cryolith Reforged,959,0,No,
+Affix Shard,101,Keplahan's Pyrolith Reforged,960,0,No,
+Affix Shard,101,Kuzon's Fury Reforged,961,0,No,
+Affix Shard,101,Kuzon's Guise Reforged,962,0,No,
+Affix Shard,101,Rogue Level of Bladestorm,1090,5,No,
+Affix Shard,101,Rogue Level of Shadow Rend,1091,5,No,
+Affix Shard,101,Sentinel Shield Throw converted to Void,1110,28,No,
+Affix Shard,101,Caretaker's Regrowth Reforged,1148,0,No,
+Affix Shard,101,Caretaker's Wrath Reforged,1149,0,No,
+Affix Shard,101,Primalist Level of Summon Tide Elemental,1153,25,No,
+Affix Shard,101,Rogue Level of Dreamslash,1154,20,No,
+Affix Shard,101,Sentinel Level of Radiant Lance,1155,25,No,
+Affix Shard,101,Increased Mana and Mana Regen,1156,0,No,
+Rune,102,Rune of Shattering,0,0,No,
+Rune,102,Rune of Refinement,1,10,No,
+Rune,102,Rune of Removal,2,15,No,
+Rune,102,Rune of Discovery,3,0,No,
+Rune,102,Rune of Shaping,4,55,No,
+Rune,102,Rune of Ascendance,5,10,No,
+Rune,102,Rune of Creation,6,15,No,
+Rune,102,Rune of Research,7,30,No,cannot drop; legacy
+Rune,102,Rune of Weaving,8,0,No,cannot drop
+Rune,102,Rune of Havoc,9,90,No,
+Rune,102,Rune of Redemption,10,70,No,
+Rune,102,Rune of Evolution,11,10,No,cannot drop
+Rune,102,Rune of Corruption,12,0,No,cannot drop
+Glyph,103,Glyph of Hope,0,0,No,
+Glyph,103,Glyph of Chaos,1,0,No,
+Glyph,103,Glyph of Order,2,30,No,
+Glyph,103,Glyph of Despair,3,10,No,
+Glyph,103,Glyph of Insight,4,30,No,cannot drop; legacy
+Glyph,103,Glyph of Envy,5,100,No,
+Key,104,Arena Key,0,0,No,cannot drop
+Key,104,Arena Key of Memory,3,0,No,
+Key,104,Temporal Sanctum Key,4,0,No,
+Key,104,Lightless Arbor Key,5,0,No,
+Key,104,Soulfire Bastion Key,6,0,No,
+Key,104,Harbinger Eye,7,0,No,cannot drop
+Key,104,Yellow Lizard Tail,8,0,No,cannot drop
+Key,104,Blue Lizard Tail,9,0,No,cannot drop
+Key,104,White Lizard Tail,10,0,No,cannot drop
+Key,104,Purple Lizard Tail,11,0,No,cannot drop
+Key,104,Green Lizard Tail,12,0,No,cannot drop
+Key,104,Portal Charm,13,0,No,cannot drop
+Key,104,Scale Charm,14,0,No,cannot drop
+Key,104,Primordial Feather,15,0,No,cannot drop
+Key,104,Primordial Fang,16,0,No,cannot drop
+Key,104,Primordial Petal,17,0,No,cannot drop
+Key,104,Primordial Horn,18,0,No,cannot drop
+Key,104,Crystallized Heart,19,0,No,cannot drop
+Key,104,Black Market Token,20,0,No,cannot drop; legacy; obsolete
+Key,104,Merchant Token,21,0,No,
+Key,104,Temporal Keystone,22,0,No,
+Key,104,Timeglass Fragment,23,0,No,cannot drop
+Key,104,Grole Egg,24,0,No,cannot drop
+Resonance,106,Golden Resonance,0,0,No,cannot drop
+Resonance,106,Obsidian Resonance,1,0,No,cannot drop
+Woven Echo,107,False Temple,2,0,No,
+Woven Echo,107,Unclaimed Trove,3,0,No,
+Woven Echo,107,Conquered Tower,4,0,No,
+Woven Echo,107,Tomb of Vessels,5,0,No,
+Woven Echo,107,Gauntlet of Strife,7,0,No,
+Woven Echo,107,Champions' Colosseum,8,0,No,
+Woven Echo,107,Pillar of Skulls,9,0,No,
+Woven Echo,107,The Seeker's Summit,10,0,No,
+Woven Echo,107,Soul Foundry,11,0,No,
+Woven Echo,107,Antipode Rift,12,0,No,
+Woven Echo,107,Heart of the Hive,13,0,No,
+Woven Echo,107,Lostwood Folly,14,0,No,
+Woven Echo,107,The Great Bridge,15,0,No,
+Woven Echo,107,Overgrown Graveyard,16,0,No,
+Woven Echo,107,Confluence of Oblivion,17,0,No,
+Woven Echo,107,Threshold of Eternity,18,0,No,
+Woven Echo,107,The Forgotten Keep,19,0,No,
+Woven Echo,107,The Grand Brewery,20,0,No,
+Woven Echo,107,Farsight Turtle,21,0,No,
+Woven Echo,107,Woven Vessel of Chaos,22,0,No,
+Woven Echo,107,Woven Vessel of Memory,23,0,No,
+Woven Echo,107,Rune Prison Complex,24,0,No,
+Woven Echo,107,Oerden's Watch,25,0,No,
+Woven Echo,107,Cemetery of Reweaving,26,0,No,
+Woven Echo,107,Sepulchre of the Lost,27,0,No,
+Woven Echo,107,Cenotaph of Worlds,28,0,No,
+Woven Echo,107,Collapsing Horizon,29,0,No,
+Woven Echo,107,The Fading Brink,30,0,No,
+Woven Echo,107,Woven Beacon,31,0,No,
+Woven Echo,107,Vault of the Barnacle King,32,0,No,
+Woven Echo,107,Defiled Fortress,33,0,No,
+Woven Echo,107,Bountiful Wilds,34,0,No,
+Woven Echo,107,Frostfire Caverns,35,0,No,
+Woven Echo,107,Besieged Gardens,36,0,No,
+Woven Echo,107,Dead Forest,37,0,No,
+Woven Echo,107,Cave of Shadows,38,0,No,
+Woven Echo,107,Bloodline Glade,39,0,No,
+Woven Echo,107,Nesting Grove,40,0,No,
+Woven Echo,107,Rampant Coast,41,0,No,
+Woven Echo,107,Omen's Veil,42,0,No,
+Woven Echo,107,Fractured Prison,43,0,No,
+Woven Echo,107,Primeval Cascade,44,0,No,
+Woven Echo,107,Pinnacle of Chaos,45,0,No,
+Woven Echo,107,Demigod's Ascendance,47,0,No,
+Bag,108,Bag of Uniques,0,0,No,cannot drop
+Bag,108,Bag of Glyphs,1,0,No,cannot drop
+Bag,108,Bag of Runes,2,0,No,cannot drop
+Bag,108,Bag of Gold,3,0,No,cannot drop
+Bag,108,Bag of Amber,4,0,No,cannot drop
+Bag,108,Bag of Shards,5,0,No,cannot drop
+Bag,108,Bag of Primordial Materials,6,0,No,cannot drop
+Bag,108,Bag of Timeglass Fragments,7,0,No,cannot drop
+Bag,108,Bag of Temporal Keystones,8,0,No,
+Bag,108,Crate of Corrupted Items,9,0,No,cannot drop
+Bag,108,Crate of Corrupted Uniques,10,0,No,cannot drop
+Bag,108,Crate of Corrupted Amulets,11,0,No,cannot drop
+Bag,108,Crate of Corrupted Primalist Items,12,0,No,cannot drop
+Bag,108,Crate of Corrupted Mage Items,13,0,No,cannot drop
+Bag,108,Crate of Corrupted Sentinel Items,14,0,No,cannot drop
+Bag,108,Crate of Corrupted Acolyte Items,15,0,No,cannot drop
+Bag,108,Crate of Corrupted Rogue Items,16,0,No,cannot drop
+Bag,108,Bag of Ancient Bones,17,0,No,cannot drop
+Bag,108,Bag of Bags,18,0,No,cannot drop
+Bag,108,Bag of Common Shards,19,0,No,cannot drop
+Bag,108,Bag of Random Shards,20,0,No,cannot drop
+Bag,108,Bag of Uncommon Shards,21,0,No,cannot drop
+Bag,108,Bag of Common Glyphs,22,0,No,cannot drop
+Bag,108,Bag of Random Glyphs,23,0,No,cannot drop
+Bag,108,Bag of Uncommon Glyphs,24,0,No,cannot drop
+Bag,108,Bag of Common Runes,25,0,No,cannot drop
+Bag,108,Bag of Random Runes,26,0,No,cannot drop
+Bag,108,Bag of Uncommon Runes,27,0,No,cannot drop
+Bag,108,Bag of Muffins,28,0,No,cannot drop
+Bag,108,Bag of Arena Keys,29,0,No,cannot drop
+Bag,108,Bag of Dungeon Keys,30,0,No,cannot drop
+Bag,108,Bag of Uncommon Materials,31,0,No,cannot drop
+Lens,109,Lens Of Celerity,0,0,No,cannot drop
+Lens,109,Lens Of Duplication,1,0,No,cannot drop
+Lens,109,Lens Of Charity,2,0,No,cannot drop
+Lens,109,Lens Of Tyranny,3,0,No,cannot drop
+Lens,109,Lens Of Origin,4,0,No,cannot drop
+Lens,109,Lens Of Finality,5,0,No,cannot drop
+Lens,109,Lens Of Anomaly,6,0,No,cannot drop
+Lens,109,Lens Of Curiosity,7,0,No,cannot drop
+Lens,109,Lens Of Acceleration,8,0,No,cannot drop
+Lens,109,Lens Of Celestial Scales,9,0,No,cannot drop
+Lens,109,Lens Of Prowess,10,0,No,cannot drop
+Lens,109,Lens Of Quality,11,0,No,cannot drop
