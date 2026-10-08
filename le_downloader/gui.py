@@ -1,7 +1,7 @@
 """The main window and the Delete Saves window."""
 import os
 import threading
-from .common import APP_DIR, LOG_FILE, logger
+from .common import APP_DIR, ENVIRONMENTS, LOG_FILE, logger
 from .let_fetch import FetchError, run_from_link
 from .items import build_info, export, format_summary
 from . import le_profile, maxroll
@@ -23,7 +23,7 @@ def run_gui():
         pass
 
     root = tk.Tk()
-    root.title("Last Epoch Build Downloader - Season 5 - V1.1")
+    root.title("Last Epoch Build Downloader - Season 5 - V1.2")
     icon_file = os.path.join(APP_DIR, "LastEpochBuildDownloader.ico")
     if os.path.isfile(icon_file):
         try:
@@ -75,6 +75,10 @@ def run_gui():
     ttk.Checkbutton(modes, text="Hardcore", variable=hardcore_var).pack(side="left")
     ttk.Checkbutton(modes, text="Solo Character Found (SCF)",
                     variable=ssf_var).pack(side="left", padx=(16, 0))
+    environment_var = tk.StringVar(value=ENVIRONMENTS[0][0])
+    ttk.Label(modes, text="Environment:").pack(side="left", padx=(24, 4))
+    ttk.Combobox(modes, textvariable=environment_var, state="readonly", width=10,
+                 values=[name for name, _cycle in ENVIRONMENTS]).pack(side="left")
 
     row2 = ttk.Frame(frm)
     row2.pack(fill="x", pady=(0, 8))
@@ -271,7 +275,8 @@ def run_gui():
                 "save_dir": save_dir_var.get().strip(),
                 "save_file_name": file_name_var.get().strip(),
                 "hardcore": bool(hardcore_var.get()),
-                "solo_character_challenge": bool(ssf_var.get())}
+                "solo_character_challenge": bool(ssf_var.get()),
+                "environment": environment_var.get()}
 
     def ui(fn, *a):
         root.after(0, lambda: fn(*a))
@@ -389,10 +394,10 @@ def run_gui():
     def on_go(*_):
         link = link_var.get()
         if not link.strip():
-            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.1", "Paste a planner or profile character link first.")
+            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.2", "Paste a planner or profile character link first.")
             return
         if not name_var.get().strip():
-            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.1", "Enter a character name first.")
+            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.2", "Enter a character name first.")
             return
         if maxroll.is_maxroll_link(link):
             start(lambda: maxroll.run_from_link(link, log, ask_from_thread(pick_set_dialog)))

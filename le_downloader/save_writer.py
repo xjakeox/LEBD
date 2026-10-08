@@ -2,7 +2,7 @@
 import json
 import os
 import re
-from .common import APP_DIR, _console
+from .common import APP_DIR, ENVIRONMENTS, _console
 from .items import CLASSES, CONTAINER_IDS, IDOL_GRID_CONTAINER
 from .blessings import BLESSING_BASE_TYPE, apply_blessings, unlock_empowered
 
@@ -73,11 +73,22 @@ def load_template(class_index):
     return json.loads(text[len(SAVE_HEADER):])
 
 
+def environment_cycle(environment):
+    """"Seasonal" / "Legacy" (or None for Seasonal) -> cycle number."""
+    cycles = dict(ENVIRONMENTS)
+    if environment is None:
+        return ENVIRONMENTS[0][1]
+    if environment not in cycles:
+        raise SaveError("unknown environment %r" % environment)
+    return cycles[environment]
+
+
 def build_character_save(build, rows, character_name, slot_number, hardcore=False,
-                         solo_character_challenge=False):
+                         solo_character_challenge=False, environment=None):
     """Copies the class template and fills in the build. Returns the save dict.
     hardcore / solo_character_challenge set the character's mode (the save's "hardcore" and
-    "soloCharacterChallenge" fields; LE Tools profiles show the latter as Solo Character)."""
+    "soloCharacterChallenge" fields; LE Tools profiles show the latter as Solo Character).
+    environment: "Seasonal" or "Legacy" -> the save's "cycle" (see ENVIRONMENTS)."""
     data = build.get("data", build)
     bio = data.get("bio") or {}
     save = load_template(bio.get("characterClass", build.get("class")))
@@ -87,6 +98,7 @@ def build_character_save(build, rows, character_name, slot_number, hardcore=Fals
     save["chosenMastery"] = save["originalMastery"] = int(mastery)
     save["hardcore"] = bool(hardcore)
     save["soloCharacterChallenge"] = bool(solo_character_challenge)
+    save["cycle"] = environment_cycle(environment)
     if hardcore:   # a fresh hardcore character: alive, no deaths
         save["died"] = False
         save["deaths"] = 0
@@ -145,7 +157,8 @@ def write_character_save(build, rows, settings, log=_console):
     m = _SAVE_SLOT_RX.match(file_name)
     save = build_character_save(build, rows, name, int(m.group(1)) if m else None,
                                 settings.get("hardcore", False),
-                                settings.get("solo_character_challenge", False))
+                                settings.get("solo_character_challenge", False),
+                                settings.get("environment"))
     with open(path, "x", encoding="utf-8") as f:   # "x": fail rather than overwrite
         f.write(SAVE_HEADER + json.dumps(save, separators=(",", ":")))
     log("Saved character: %s" % path)

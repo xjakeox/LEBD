@@ -2,7 +2,7 @@
 import csv
 import os
 import random
-from .common import APP_DIR, EXTRA_AFFIX_FIELDS, SLOT_NAMES, SLOT_ORDER, _console, decode_affix_id, decode_item
+from .common import APP_DIR, ENVIRONMENTS, EXTRA_AFFIX_FIELDS, SLOT_NAMES, SLOT_ORDER, _console, decode_affix_id, decode_item
 
 
 # ----------------------------------------------------------------------------------------
@@ -453,7 +453,7 @@ def build_info(build, tables):
 
 def export(code, build, tables, version, log, save_settings=None):
     """save_settings: {"character_name", "save_dir", "save_file_name", "hardcore",
-    "solo_character_challenge"}, logged here; the
+    "solo_character_challenge", "environment"}, logged here; the
     save file itself is written by write_character_save."""
     if save_settings:
         log("Character name: %s" % (save_settings.get("character_name") or "(not set)"))
@@ -463,6 +463,8 @@ def export(code, build, tables, version, log, save_settings=None):
                                 ("Solo Character Found (SCF)",
                                  save_settings.get("solo_character_challenge"))) if on]
         log("Mode:           %s" % (", ".join(mode) or "Softcore"))
+        env = save_settings.get("environment") or ENVIRONMENTS[0][0]
+        log("Environment:    %s (cycle %s)" % (env, dict(ENVIRONMENTS).get(env, "?")))
     rows = build_rows(build, tables, ItemIdLookup(log))
     objects = [r["_object"] for r in rows if r.get("_object")]
     log("Game data: %s" % version)

@@ -52,6 +52,9 @@ SLOT_NAMES = {
 }
 SLOT_ORDER = ["head", "chest", "hands", "waist", "feet", "amulet", "ring1", "ring2",
               "relic", "weapon1", "weapon2", "idol_altar"]
+# Character environment -> the save's "cycle" value. The class templates are all Seasonal.
+ENVIRONMENTS = [("Seasonal", 8), ("Legacy", 7)]
+
 EXTRA_AFFIX_FIELDS = [("sealedAffix", "Sealed"), ("primordialAffix", "Primordial"),
                       ("corruptedAffix", "Corrupted"), ("setAffix", "Set")]
 
