@@ -27,7 +27,10 @@ IDOL_SIZES = {25: (1, 1), 26: (1, 1), 27: (2, 1), 28: (1, 2), 29: (3, 1), 30: (1
               31: (4, 1), 32: (1, 4), 33: (2, 2)}   # base type -> (width, height), from game data
 ENCODE_ROLL = 255          # affix and implicit roll bytes (255 = perfect roll)
 ENCODE_FORGING_POTENTIAL = 63  # byte 12 bits 0-5 (63 = max); type bits 6-7 = 0 (normal)
+RARE_RARITY = 4            # byte 7 on rares; the game keeps 4 after a T8 upgrade
+PRIMORDIAL_TIER = 8        # sealed primordial affixes are T8 records (tier nibble 7)
 UNIQUE_RARITY = 7          # byte 7 on unique items
+SET_RARITY = 8             # byte 7 on set items (unique layout, byte 22 = 0)
 LEGENDARY_RARITY = 9       # byte 7 on uniques with legendary (slammed) affixes
 UNIQUE_LEGENDARY_POTENTIAL = 0  # byte 22 on plain uniques (0-4)
 CORRUPTED_FLAG = 16        # byte 8 bit 4
@@ -51,9 +54,13 @@ def encode_affix(affix_id, tier, roll=ENCODE_ROLL):
 
 
 def encode_item_data(base_type_id, subtype_id, affixes, sealed=None, rng=random,
-                     corruption=None, corrupted=False, forging_potential=None):
+                     corruption=None, corrupted=False, forging_potential=None, primordial=()):
     """affixes: list of (affix_id, tier) for the visible affixes, in order.
     sealed: (affix_id, tier) or None -> first record, flag 64 in byte 13.
+    primordial: list of affix IDs for sealed primordial (T8) affixes. Each is an ordinary
+      T8 record placed after the sealed affix and before the visible ones; it needs no flag
+      in byte 13, and the item keeps rarity 4 (rare) in byte 7 (decoder: Rune of Evolution
+      test on Champion Regalia).
     corruption: (affix_id, tier) or None -> last record, flag 128 in byte 13, byte 8 = 16.
     corrupted: set byte 8 = 16 without a corruption affix (e.g. Idol Altars).
     forging_potential: overrides ENCODE_FORGING_POTENTIAL (0-63).
@@ -62,7 +69,10 @@ def encode_item_data(base_type_id, subtype_id, affixes, sealed=None, rng=random,
         raise EncodeError("item type/subtype ID does not fit in one byte")
     if len(affixes) > 63:
         raise EncodeError("too many affixes")
-    records = ([encode_affix(*sealed)] if sealed else []) + [encode_affix(*a) for a in affixes]
+    primordial = list(primordial)
+    records = (([encode_affix(*sealed)] if sealed else [])
+               + [encode_affix(aid, PRIMORDIAL_TIER) for aid in primordial]
+               + [encode_affix(*a) for a in affixes])
     if corruption:
         records.append(encode_affix(*corruption))
     if len(records) > 63:
@@ -70,14 +80,14 @@ def encode_item_data(base_type_id, subtype_id, affixes, sealed=None, rng=random,
     data = [6]                                             # [0] format version
     data += [rng.randrange(256) for _ in range(4)]         # [1-4] per-item ID/seed (random)
     data += [base_type_id, subtype_id]                     # [5] base type, [6] subtype
-    data += [len(affixes)]                                 # [7] visible affix count
+    data += [RARE_RARITY if primordial else len(affixes)]  # [7] rarity / visible affix count
     fp = ENCODE_FORGING_POTENTIAL if forging_potential is None else forging_potential
     data += [CORRUPTED_FLAG if (corruption or corrupted) else 0]  # [8] flags (16 = corrupted)
     data += [ENCODE_ROLL] * 3                              # [9-11] implicit rolls
     data += [fp & 63]                # [12] forging potential, normal type
     data += [len(records) | (RECORD_FLAG_SEALED if sealed else 0)
              | (RECORD_FLAG_CORRUPTION if corruption else 0)]   # [13] record count + flags
-    for r in records:                                      # [14+] sealed, visible, corruption
+    for r in records:                       # [14+] sealed, primordial, visible, corruption
         data += r
     return data
 
@@ -90,7 +100,7 @@ def item_object(data, container_id, position=(0, 0)):
 
 
 def encode_unique_data(base_type_id, subtype_id, unique_id, legendary_affixes=(), rng=random,
-                       corruption_affix=None, primordial_affixes=()):
+                       corruption_affix=None, primordial_affixes=(), is_set=False):
     """Unique / legendary item, per the decoder's findings.
     Plain unique (rarity 7), 23 bytes:
       [6, r,r,r,r, base, subtype, 7, 0, impl1-3, ID>>8, ID&255, 8 mod rolls, LP]
@@ -104,7 +114,10 @@ def encode_unique_data(base_type_id, subtype_id, unique_id, legendary_affixes=()
     Any extra affix (legendary, primordial or corruption) turns a plain unique into the
     rarity 9 layout.
     legendary_affixes / primordial_affixes: lists of (affix_id, tier);
-    corruption_affix: (affix_id, tier) or None."""
+    corruption_affix: (affix_id, tier) or None.
+    Set items (is_set, confirmed on Isadora's Revenge and Sinathia's Resurrection): the plain
+    unique layout with byte 7 = 8, the set item ID in [12-13] (same ID list as uniques) and
+    byte 22 = 0, since sets can't take Legendary Potential."""
     if not (0 <= base_type_id <= 255 and 0 <= subtype_id <= 255):
         raise EncodeError("item type/subtype ID does not fit in one byte")
     if not (0 < unique_id <= 0xFFFF):
@@ -114,12 +127,15 @@ def encode_unique_data(base_type_id, subtype_id, unique_id, legendary_affixes=()
     if len(legendary_affixes) > 4:
         raise EncodeError("more than 4 legendary affixes")
     extra = legendary_affixes + primordial_affixes + ([corruption_affix] if corruption_affix else [])
+    if is_set and extra:
+        raise EncodeError("set items with legendary, primordial or corruption affixes "
+                          "are not encoded yet")
     if len(extra) > 63:
         raise EncodeError("too many affix records")
     data = [6]                                             # [0] format version
     data += [rng.randrange(256) for _ in range(4)]         # [1-4] random
     data += [base_type_id, subtype_id]                     # [5] base type, [6] base subtype
-    data += [LEGENDARY_RARITY if extra else UNIQUE_RARITY] # [7] 9 with extra affixes / 7 plain
+    data += [LEGENDARY_RARITY if extra else SET_RARITY if is_set else UNIQUE_RARITY]  # [7]
     data += [CORRUPTED_FLAG if corruption_affix else 0]    # [8] flags (16 = corrupted)
     data += [ENCODE_ROLL] * 3                              # [9-11] implicit rolls
     data += [unique_id >> 8, unique_id & 0xFF]             # [12-13] unique ID (16-bit)
@@ -138,6 +154,13 @@ def _affix_pair(a):
     if aid is None or a.get("tier") is None:
         raise EncodeError("could not read affix %r" % a.get("id"))
     return aid, int(a["tier"])
+
+
+def _affix_list(value):
+    """A primordialAffix field (one affix or a list, as Maxroll gives it) -> [(id, tier)]."""
+    if not value:
+        return []
+    return [_affix_pair(a) for a in (value if isinstance(value, list) else [value])]
 
 
 def idol_grid_position(x, y, height):
@@ -170,8 +193,6 @@ def encode_build_item(slot_key, item, tables, rng=random):
         u = tables["uniques"].get(str(uid))
         if not u:
             raise EncodeError("unique ID %s not found in the game data" % uid)
-        if u.get("isSet"):
-            raise EncodeError("set items are not encoded yet")
         bid = info.get("baseTypeId")
         if bid is None:
             bid = u.get("baseTypeId")
@@ -184,31 +205,49 @@ def encode_build_item(slot_key, item, tables, rng=random):
         if len(corr_fields) > 1:
             raise EncodeError("unique has both a corruptedAffix and a sealedAffix")
         corruption = _affix_pair(item[corr_fields[0]]) if corr_fields else None
-        primordial = item.get("primordialAffix")
-        primordial = [_affix_pair(p) for p in (primordial if isinstance(primordial, list)
-                                               else [primordial] if primordial else [])]
+        primordial = _affix_list(item.get("primordialAffix"))
+        if corruption and corr_fields[0] == "sealedAffix" and corruption[1] >= PRIMORDIAL_TIER:
+            primordial.append(corruption)   # a T8 "sealed" affix is primordial, not corruption
+            corruption = None
         return (encode_unique_data(int(bid), int(sub), int(uid), legendary, rng, corruption,
-                                   primordial), container)
+                                   primordial, is_set=bool(u.get("isSet"))), container)
     if info.get("kind") != "I":
         raise EncodeError("unrecognised item code %r" % item.get("id"))
-    for field in ("primordialAffix", "setAffix"):
-        if item.get(field):
-            raise EncodeError("%s is not supported by the encoder yet" % field)
+    if item.get("setAffix"):
+        raise EncodeError("setAffix (a Reforged set affix on a crafted item) is not "
+                          "supported by the encoder yet")
 
     affixes = [_affix_pair(a) for a in item.get("affixes") or []]
     sealed = _affix_pair(item["sealedAffix"]) if item.get("sealedAffix") else None
     corruption = _affix_pair(item["corruptedAffix"]) if item.get("corruptedAffix") else None
+    # Sealed primordial (T8) affixes: LE Tools may list one as primordialAffix or as a
+    # sealedAffix with tier 8. Either way it is written as a T8 record with no flag.
+    primordial = [aid for aid, _tier in _affix_list(item.get("primordialAffix"))]
+    if sealed and sealed[1] >= PRIMORDIAL_TIER:
+        primordial.insert(0, sealed[0])
+        sealed = None
+    is_gear = (info["baseTypeId"] not in IDOL_SIZES
+               and info["baseTypeId"] != IDOL_ALTAR_BASE_TYPE)
+    if is_gear and corruption and not sealed:
+        # Decoder (corrupted rare body armour): corrupting a crafted item adds a SEALED
+        # affix as the first record (flag 64, not 128), sets byte 8 = 16 and drops
+        # forging potential to 0.
+        return (encode_item_data(info["baseTypeId"], info["subTypeId"], affixes, corruption,
+                                 rng, corrupted=True, forging_potential=0,
+                                 primordial=primordial), container)
     if info["baseTypeId"] in IDOL_SIZES:
         data = encode_item_data(info["baseTypeId"], info["subTypeId"], affixes, sealed, rng,
-                                corruption, forging_potential=IDOL_FORGING_POTENTIAL)
+                                corruption, forging_potential=IDOL_FORGING_POTENTIAL,
+                                primordial=primordial)
     elif info["baseTypeId"] == IDOL_ALTAR_BASE_TYPE:
         # Matches an equipped altar logged from the game: normal layout, corrupted, 0 FP.
         data = encode_item_data(info["baseTypeId"], info["subTypeId"], affixes, sealed, rng,
                                 corruption, corrupted=True,
-                                forging_potential=IDOL_ALTAR_FORGING_POTENTIAL)
+                                forging_potential=IDOL_ALTAR_FORGING_POTENTIAL,
+                                primordial=primordial)
     else:
         data = encode_item_data(info["baseTypeId"], info["subTypeId"], affixes, sealed, rng,
-                                corruption)
+                                corruption, primordial=primordial)
     return data, container
 
 
@@ -285,8 +324,9 @@ def describe_item(code, tables):
 def item_row(slot_label, item, tables, lookup, slot_key=None):
     affixes = list(item.get("affixes") or [])
     for field, _label in EXTRA_AFFIX_FIELDS:  # sealed / primordial / corrupted affixes go last
-        if item.get(field):
-            affixes.append(item[field])
+        value = item.get(field)
+        if value:
+            affixes.extend(value if isinstance(value, list) else [value])
     d = describe_item(item.get("id", ""), tables)
     ids, tiers, kinds, names = [], [], [], []
     for a in affixes:
@@ -412,12 +452,17 @@ def build_info(build, tables):
 
 
 def export(code, build, tables, version, log, save_settings=None):
-    """save_settings: {"character_name", "save_dir", "save_file_name"}, logged here; the
+    """save_settings: {"character_name", "save_dir", "save_file_name", "hardcore",
+    "solo_character_challenge"}, logged here; the
     save file itself is written by write_character_save."""
     if save_settings:
         log("Character name: %s" % (save_settings.get("character_name") or "(not set)"))
         log("Save folder:    %s" % (save_settings.get("save_dir") or "(not set)"))
         log("New save file:  %s" % (save_settings.get("save_file_name") or "(not set)"))
+        mode = [m for m, on in (("Hardcore", save_settings.get("hardcore")),
+                                ("Solo Character Found (SCF)",
+                                 save_settings.get("solo_character_challenge"))) if on]
+        log("Mode:           %s" % (", ".join(mode) or "Softcore"))
     rows = build_rows(build, tables, ItemIdLookup(log))
     objects = [r["_object"] for r in rows if r.get("_object")]
     log("Game data: %s" % version)

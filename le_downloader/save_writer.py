@@ -73,8 +73,11 @@ def load_template(class_index):
     return json.loads(text[len(SAVE_HEADER):])
 
 
-def build_character_save(build, rows, character_name, slot_number):
-    """Copies the class template and fills in the build. Returns the save dict."""
+def build_character_save(build, rows, character_name, slot_number, hardcore=False,
+                         solo_character_challenge=False):
+    """Copies the class template and fills in the build. Returns the save dict.
+    hardcore / solo_character_challenge set the character's mode (the save's "hardcore" and
+    "soloCharacterChallenge" fields; LE Tools profiles show the latter as Solo Character)."""
     data = build.get("data", build)
     bio = data.get("bio") or {}
     save = load_template(bio.get("characterClass", build.get("class")))
@@ -82,6 +85,11 @@ def build_character_save(build, rows, character_name, slot_number):
     save["characterName"] = character_name
     save["level"] = int(bio.get("level", build.get("level")) or save.get("level", 100))
     save["chosenMastery"] = save["originalMastery"] = int(mastery)
+    save["hardcore"] = bool(hardcore)
+    save["soloCharacterChallenge"] = bool(solo_character_challenge)
+    if hardcore:   # a fresh hardcore character: alive, no deaths
+        save["died"] = False
+        save["deaths"] = 0
     if slot_number is not None:
         save["id"] = str(slot_number)
 
@@ -135,7 +143,9 @@ def write_character_save(build, rows, settings, log=_console):
     if os.path.exists(path):
         raise SaveError("%s already exists; it was not overwritten" % file_name)
     m = _SAVE_SLOT_RX.match(file_name)
-    save = build_character_save(build, rows, name, int(m.group(1)) if m else None)
+    save = build_character_save(build, rows, name, int(m.group(1)) if m else None,
+                                settings.get("hardcore", False),
+                                settings.get("solo_character_challenge", False))
     with open(path, "x", encoding="utf-8") as f:   # "x": fail rather than overwrite
         f.write(SAVE_HEADER + json.dumps(save, separators=(",", ":")))
     log("Saved character: %s" % path)
