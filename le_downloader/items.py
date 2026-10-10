@@ -36,6 +36,20 @@ UNIQUE_LEGENDARY_POTENTIAL = 0  # byte 22 on plain uniques (0-4)
 CORRUPTED_FLAG = 16        # byte 8 bit 4
 RECORD_FLAG_SEALED = 64    # record-count byte flag: first record is a sealed affix
 RECORD_FLAG_CORRUPTION = 128  # record-count byte flag: last record is a corruption affix
+#   (decoder: only together with byte 8 = 16. Flag 128 on an uncorrupted legendary gives it
+#   16 Weaver's Will instead, so a clean legendary never uses it)
+UNSATED_RAGE_UNIQUE_ID = 477    # Unsated Rage (Ring base 21, Opal Ring subtype 10)
+WITHSTAND_THE_ELEMENTS_ID = 479  # Withstand the Elements (Gloves base 4, subtype 3)
+# Uniques with built-in random affixes that are stored as ordinary records after the slammed
+# affixes (decoder, confirmed in game on 4 LP versions of both):
+#   unique ID -> (affix IDs in the pool, how many the item carries)
+# Unsated Rage: one "You have <X> Rage" (1111, 1113-1138; 1112 is a different affix).
+# Withstand the Elements: two "per X% Overcapped Physical/Cold Resistance" affixes (1140-1147).
+BUILTIN_AFFIXES = {
+    UNSATED_RAGE_UNIQUE_ID: (frozenset([1111] + list(range(1113, 1139))), 1),
+    WITHSTAND_THE_ELEMENTS_ID: (frozenset(range(1140, 1148)), 2),
+}
+BUILTIN_AFFIX_TIER = 1          # tier doesn't matter to the game; T1 matches the confirmed items
 UNIQUE_ROLL_SLOTS = 8      # unique items always carry 8 mod roll bytes [14-21]
 SAVE_FORMAT_VERSION = 2    # the item object's "formatVersion" field
 
@@ -100,7 +114,8 @@ def item_object(data, container_id, position=(0, 0)):
 
 
 def encode_unique_data(base_type_id, subtype_id, unique_id, legendary_affixes=(), rng=random,
-                       corruption_affix=None, primordial_affixes=(), is_set=False):
+                       corruption_affix=None, primordial_affixes=(), is_set=False,
+                       builtin_affixes=()):
     """Unique / legendary item, per the decoder's findings.
     Plain unique (rarity 7), 23 bytes:
       [6, r,r,r,r, base, subtype, 7, 0, impl1-3, ID>>8, ID&255, 8 mod rolls, LP]
@@ -110,11 +125,19 @@ def encode_unique_data(base_type_id, subtype_id, unique_id, legendary_affixes=()
     Corrupted legendary: byte 8 = 16 (confirmed from an in-game before/after).
     Primordial affixes (confirmed in game on Withstand the Elements): the item is stored as
     rarity 9 and each primordial affix is an ordinary record counted by byte 22.
-    Record order: legendary affixes, primordial affixes, corruption affix (always last).
-    Any extra affix (legendary, primordial or corruption) turns a plain unique into the
-    rarity 9 layout.
-    legendary_affixes / primordial_affixes: lists of (affix_id, tier);
+    Record order: legendary affixes, primordial affixes, built-in affixes, corruption affix
+    (always last).
+    Any extra affix (legendary, primordial, built-in or corruption) turns a plain unique into
+    the rarity 9 layout.
+    Flag 128 in byte 22 is used ONLY with a corruption affix (byte 8 = 16). A clean legendary
+    has byte 22 = record count and no flag; flag 128 without corruption shows Weaver's Will.
+    legendary_affixes / primordial_affixes / builtin_affixes: lists of (affix_id, tier);
     corruption_affix: (affix_id, tier) or None.
+    builtin_affixes: Unsated Rage's Rage / Withstand the Elements' two overcapped-resistance
+      affixes. Ordinary records, no flag. Confirmed in game:
+      Unsated Rage 4 LP:  [..., 1,221, 255 x8, 5, 4 slams, 4,87,255]            byte 8 = 0
+      WtE 4 LP:           [..., 1,223, 255 x8, 6, 4 slams, 4,121,255, 4,119,255] byte 8 = 0
+      WtE 4 LP corrupted: same with byte 8 = 16, byte 22 = 135 (128 + 7), 20,3,255 appended.
     Set items (is_set, confirmed on Isadora's Revenge and Sinathia's Resurrection): the plain
     unique layout with byte 7 = 8, the set item ID in [12-13] (same ID list as uniques) and
     byte 22 = 0, since sets can't take Legendary Potential."""
@@ -126,7 +149,8 @@ def encode_unique_data(base_type_id, subtype_id, unique_id, legendary_affixes=()
     primordial_affixes = list(primordial_affixes)
     if len(legendary_affixes) > 4:
         raise EncodeError("more than 4 legendary affixes")
-    extra = legendary_affixes + primordial_affixes + ([corruption_affix] if corruption_affix else [])
+    extra = (legendary_affixes + primordial_affixes + list(builtin_affixes)
+             + ([corruption_affix] if corruption_affix else []))
     if is_set and extra:
         raise EncodeError("set items with legendary, primordial or corruption affixes "
                           "are not encoded yet")
@@ -201,16 +225,34 @@ def encode_build_item(slot_key, item, tables, rng=random):
             raise EncodeError("could not work out the unique's base item")
         legendary = [_affix_pair(a) for a in item.get("affixes") or []]
         # LE Tools puts a unique's corruption affix in either corruptedAffix or sealedAffix.
-        corr_fields = [f for f in ("corruptedAffix", "sealedAffix") if item.get(f)]
-        if len(corr_fields) > 1:
-            raise EncodeError("unique has both a corruptedAffix and a sealedAffix")
-        corruption = _affix_pair(item[corr_fields[0]]) if corr_fields else None
+        corr = [(f, _affix_pair(item[f])) for f in ("corruptedAffix", "sealedAffix")
+                if item.get(f)]
         primordial = _affix_list(item.get("primordialAffix"))
-        if corruption and corr_fields[0] == "sealedAffix" and corruption[1] >= PRIMORDIAL_TIER:
+        builtin = []
+        pool = BUILTIN_AFFIXES.get(int(uid))
+        if pool:
+            # Unsated Rage / Withstand the Elements: the built-in affixes may come from LE Tools
+            # as slams, primordials or the sealed/corrupted affix. Wherever they are, they are
+            # written as plain records after the slams; they never make the item corrupted.
+            ids, count = pool
+            for group in (legendary, primordial):
+                builtin += [a for a in group if a[0] in ids]
+                group[:] = [a for a in group if a[0] not in ids]
+            builtin += [a for _f, a in corr if a[0] in ids]
+            corr = [(f, a) for f, a in corr if a[0] not in ids]
+            if len(builtin) > count:
+                raise EncodeError("%s has %d built-in affixes (expected at most %d)"
+                                  % (u.get("name") or "unique %s" % uid, len(builtin), count))
+            builtin = [(aid, BUILTIN_AFFIX_TIER) for aid, _tier in builtin]
+        if len(corr) > 1:
+            raise EncodeError("unique has both a corruptedAffix and a sealedAffix")
+        corruption = corr[0][1] if corr else None
+        if corruption and corr[0][0] == "sealedAffix" and corruption[1] >= PRIMORDIAL_TIER:
             primordial.append(corruption)   # a T8 "sealed" affix is primordial, not corruption
             corruption = None
         return (encode_unique_data(int(bid), int(sub), int(uid), legendary, rng, corruption,
-                                   primordial, is_set=bool(u.get("isSet"))), container)
+                                   primordial, is_set=bool(u.get("isSet")),
+                                   builtin_affixes=builtin), container)
     if info.get("kind") != "I":
         raise EncodeError("unrecognised item code %r" % item.get("id"))
     if item.get("setAffix"):

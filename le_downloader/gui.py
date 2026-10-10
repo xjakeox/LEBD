@@ -23,7 +23,7 @@ def run_gui():
         pass
 
     root = tk.Tk()
-    root.title("Last Epoch Build Downloader - Season 5 - V1.2")
+    root.title("Last Epoch Build Downloader - Season 5 - V1.2.1")
     icon_file = os.path.join(APP_DIR, "LastEpochBuildDownloader.ico")
     if os.path.isfile(icon_file):
         try:
@@ -394,10 +394,10 @@ def run_gui():
     def on_go(*_):
         link = link_var.get()
         if not link.strip():
-            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.2", "Paste a planner or profile character link first.")
+            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.2.1", "Paste a planner or profile character link first.")
             return
         if not name_var.get().strip():
-            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.2", "Enter a character name first.")
+            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.2.1", "Enter a character name first.")
             return
         if maxroll.is_maxroll_link(link):
             start(lambda: maxroll.run_from_link(link, log, ask_from_thread(pick_set_dialog)))

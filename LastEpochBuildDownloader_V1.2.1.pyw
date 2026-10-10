@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Last Epoch Build Downloader - Season 5 - V1.2
+Last Epoch Build Downloader - Season 5 - V1.2.1
 ----------------------------------------------
 Paste a Last Epoch Tools planner link (e.g. https://www.lastepochtools.com/planner/BEdypDY9)
 or a profile character link (https://www.lastepochtools.com/profile/<player>/character/<name>;
@@ -16,9 +16,9 @@ then writes a game-ready character save built from the class template in Origina
 
 Usage:
     Double-click this file (.pyw: opens the window with no command prompt), or from a terminal:
-        python LastEpochBuildDownloader_V1.2.pyw
+        python LastEpochBuildDownloader_V1.2.1.pyw
             -> opens the window
-        python LastEpochBuildDownloader_V1.2.pyw <link> [--name <character name>] [--saves <folder>]
+        python LastEpochBuildDownloader_V1.2.1.pyw <link> [--name <character name>] [--saves <folder>]
                                                  [--hardcore] [--scf]
             -> no window, prints the item list (and writes the save when --name is given)
 
@@ -44,7 +44,7 @@ def run_cli(args):
     log = _console
     try:
         import argparse
-        ap = argparse.ArgumentParser(prog="LastEpochBuildDownloader_V1.2.pyw")
+        ap = argparse.ArgumentParser(prog="LastEpochBuildDownloader_V1.2.1.pyw")
         ap.add_argument("link")
         ap.add_argument("--name", default="", help="character name for the new save")
         ap.add_argument("--saves", default=None, help="offline Saves folder (default: auto-detect)")

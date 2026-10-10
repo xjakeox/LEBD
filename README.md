@@ -32,7 +32,7 @@ Paste a build link, type a character name, click **Download Character**, and a n
 
 ## How to use
 
-1. Double-click `LastEpochBuildDownloader_V1.2.pyw`.
+1. Double-click `LastEpochBuildDownloader_V1.2.1.pyw`.
 2. Paste a build link.
 3. Enter a **Character name** (required).
 4. Check the **Saves folder**. It is found automatically at
