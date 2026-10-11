@@ -5,6 +5,7 @@ from .common import APP_DIR, ENVIRONMENTS, LOG_FILE, logger
 from .let_fetch import FetchError, run_from_link
 from .items import build_info, export, format_summary
 from . import le_profile, maxroll
+from .blessings import CORRUPTION_MAX, CORRUPTION_MIN
 from .save_writer import SaveError, find_default_save_dir, list_character_saves, next_save_file_name, save_slot_numbers, write_character_save
 
 
@@ -23,7 +24,7 @@ def run_gui():
         pass
 
     root = tk.Tk()
-    root.title("Last Epoch Build Downloader - Season 5 - V1.2.1")
+    root.title("Last Epoch Build Downloader - Season 5 - V1.3")
     icon_file = os.path.join(APP_DIR, "LastEpochBuildDownloader.ico")
     if os.path.isfile(icon_file):
         try:
@@ -79,6 +80,12 @@ def run_gui():
     ttk.Label(modes, text="Environment:").pack(side="left", padx=(24, 4))
     ttk.Combobox(modes, textvariable=environment_var, state="readonly", width=10,
                  values=[name for name, _cycle in ENVIRONMENTS]).pack(side="left")
+    # Every timeline's empowered monolith gets this corruption (starts at the minimum, 100).
+    corruption_var = tk.StringVar(value=str(CORRUPTION_MIN))
+    digits_only = root.register(lambda s: s.isdigit() or s == "")
+    ttk.Label(modes, text="Timeline Corruption: ").pack(side="left", padx=(24, 4))
+    ttk.Entry(modes, textvariable=corruption_var, width=8, validate="key",
+              validatecommand=(digits_only, "%P")).pack(side="left")
 
     row2 = ttk.Frame(frm)
     row2.pack(fill="x", pady=(0, 8))
@@ -276,7 +283,8 @@ def run_gui():
                 "save_file_name": file_name_var.get().strip(),
                 "hardcore": bool(hardcore_var.get()),
                 "solo_character_challenge": bool(ssf_var.get()),
-                "environment": environment_var.get()}
+                "environment": environment_var.get(),
+                "corruption": int(corruption_var.get())}
 
     def ui(fn, *a):
         root.after(0, lambda: fn(*a))
@@ -394,10 +402,17 @@ def run_gui():
     def on_go(*_):
         link = link_var.get()
         if not link.strip():
-            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.2.1", "Paste a planner or profile character link first.")
+            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.3", "Paste a planner or profile character link first.")
             return
         if not name_var.get().strip():
-            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.2.1", "Enter a character name first.")
+            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.3", "Enter a character name first.")
+            return
+        corruption = corruption_var.get()
+        if not corruption or not CORRUPTION_MIN <= int(corruption) <= CORRUPTION_MAX:
+            messagebox.showwarning(
+                "Timeline Corruption", "Timeline Corruption must be between %d and %d.\n\n"
+                "Please adjust it."
+                % (CORRUPTION_MIN, CORRUPTION_MAX))
             return
         if maxroll.is_maxroll_link(link):
             start(lambda: maxroll.run_from_link(link, log, ask_from_thread(pick_set_dialog)))

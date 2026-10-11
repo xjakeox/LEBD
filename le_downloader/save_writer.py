@@ -4,7 +4,7 @@ import os
 import re
 from .common import APP_DIR, ENVIRONMENTS, _console
 from .items import CLASSES, CONTAINER_IDS, IDOL_GRID_CONTAINER
-from .blessings import BLESSING_BASE_TYPE, apply_blessings, unlock_empowered
+from .blessings import BLESSING_BASE_TYPE, apply_blessings, set_timeline_corruption, unlock_empowered
 
 
 # ----------------------------------------------------------------------------------------
@@ -84,11 +84,12 @@ def environment_cycle(environment):
 
 
 def build_character_save(build, rows, character_name, slot_number, hardcore=False,
-                         solo_character_challenge=False, environment=None):
+                         solo_character_challenge=False, environment=None, corruption=None):
     """Copies the class template and fills in the build. Returns the save dict.
     hardcore / solo_character_challenge set the character's mode (the save's "hardcore" and
     "soloCharacterChallenge" fields; LE Tools profiles show the latter as Solo Character).
-    environment: "Seasonal" or "Legacy" -> the save's "cycle" (see ENVIRONMENTS)."""
+    environment: "Seasonal" or "Legacy" -> the save's "cycle" (see ENVIRONMENTS).
+    corruption: if given, every timeline's empowered monolith is set to it."""
     data = build.get("data", build)
     bio = data.get("bio") or {}
     save = load_template(bio.get("characterClass", build.get("class")))
@@ -136,6 +137,8 @@ def build_character_save(build, rows, character_name, slot_number, hardcore=Fals
         save["abilityBar"] = bar
     apply_blessings(save, build)
     unlock_empowered(save)
+    if corruption is not None:
+        set_timeline_corruption(save, corruption)
     return save
 
 
@@ -158,13 +161,15 @@ def write_character_save(build, rows, settings, log=_console):
     save = build_character_save(build, rows, name, int(m.group(1)) if m else None,
                                 settings.get("hardcore", False),
                                 settings.get("solo_character_challenge", False),
-                                settings.get("environment"))
+                                settings.get("environment"), settings.get("corruption"))
     with open(path, "x", encoding="utf-8") as f:   # "x": fail rather than overwrite
         f.write(SAVE_HEADER + json.dumps(save, separators=(",", ":")))
     log("Saved character: %s" % path)
     n = sum(1 for o in save["savedItems"] if o.get("data", [0] * 6)[5:6] == [BLESSING_BASE_TYPE])
     if n:
         log("Blessings written: %d" % n)
+    if settings.get("corruption") is not None:
+        log("Timeline corruption set to %d on all 10 empowered timelines" % settings["corruption"])
     return path
 
 

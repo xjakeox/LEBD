@@ -80,3 +80,37 @@ def unlock_empowered(save):
             if diff not in entry["progress"]:
                 entry["progress"].append(diff)
     save["timelineDifficultyUnlocks"] = [unlocks[k] for k in sorted(unlocks)]
+
+
+# Timeline corruption: each monolith run in the save's "monolithRuns" is keyed by timelineID
+# and difficultyIndex (0 = normal, 1 = empowered) and keeps its corruption in
+# savedEchoWeb.corruption; "maxCorruption" is the character's highest. Jake's save at 118
+# corruption on Fall of the Outcasts (empowered) had that run with an 11-island echo web.
+# Untested: whether the game accepts a run we write with an empty web (no islands or echo
+# options) and generates the web itself when the monolith is entered.
+CORRUPTION_MIN, CORRUPTION_MAX = 100, 100000
+
+
+def _empty_monolith_run(timeline, difficulty):
+    return {"timelineID": timeline, "difficultyIndex": difficulty, "depth": 0,
+            "questCompletion": 0, "questBranch": 0, "bossLootDropped": False,
+            "savedEchoWeb": {"chains": [], "chainTiers": [], "chainTypes": [],
+                             "beaconRevealed": [], "version": 0, "corruption": 0,
+                             "echoesSinceLastDeath": 0, "gazeOfOrobyss": 0, "islands": []},
+            "stability": 0, "previousEchoWasQuestEcho": False,
+            "previousQuestEchoWasCompleted": False, "previousQuestAttemptLostStability": False,
+            "previousEchoHexIndex": 0, "previousEchoIslandType": 0, "hasRerolledOptions": False,
+            "modIndexs": [], "modRemainingDurations": [], "modEffectModifiers": [], "options": []}
+
+
+def set_timeline_corruption(save, corruption):
+    """Sets every timeline's empowered monolith to the given corruption (existing runs keep
+    their echo web; missing ones are added with an empty web). Changes save in place."""
+    corruption = int(corruption)
+    runs = {(r.get("timelineID"), r.get("difficultyIndex")): r
+            for r in save.get("monolithRuns") or []}
+    for tl in range(1, 11):
+        run = runs.setdefault((tl, 1), _empty_monolith_run(tl, 1))
+        run.setdefault("savedEchoWeb", {})["corruption"] = corruption
+    save["monolithRuns"] = [runs[k] for k in sorted(runs)]
+    save["maxCorruption"] = max(int(save.get("maxCorruption") or 0), corruption)
