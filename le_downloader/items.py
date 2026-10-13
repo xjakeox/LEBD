@@ -2,7 +2,7 @@
 import csv
 import os
 import random
-from .common import APP_DIR, ENVIRONMENTS, EXTRA_AFFIX_FIELDS, SLOT_NAMES, SLOT_ORDER, _console, decode_affix_id, decode_item
+from .common import APP_DIR, ENVIRONMENTS, EXTRA_AFFIX_FIELDS, SLOT_NAMES, SLOT_ORDER, _console, decode_affix_id, decode_item, logger
 
 
 # ----------------------------------------------------------------------------------------
@@ -26,6 +26,13 @@ IDOL_FORGING_POTENTIAL = 0
 IDOL_SIZES = {25: (1, 1), 26: (1, 1), 27: (2, 1), 28: (1, 2), 29: (3, 1), 30: (1, 3),
               31: (4, 1), 32: (1, 4), 33: (2, 2)}   # base type -> (width, height), from game data
 ENCODE_ROLL = 255          # affix and implicit roll bytes (255 = perfect roll)
+# Last Epoch Tools profile characters carry the item's real roll bytes (0-255), the same
+# values the game stores: "r" on each affix, "ir" = implicit rolls (bytes 9-11, in implicit
+# order), "ur" = unique mod rolls (bytes 14-21, indexed by the mod's rollId). The site's
+# profile script shows them as min + (max - min) * roll / 255. Builds flagged with
+# USE_ROLLS_KEY copy them; planners and Maxroll keep perfect rolls.
+USE_ROLLS_KEY = "_use_rolls"
+IMPLICIT_SLOTS = 3
 ENCODE_FORGING_POTENTIAL = 63  # byte 12 bits 0-5 (63 = max); type bits 6-7 = 0 (normal)
 RARE_RARITY = 4            # byte 7 on rares; the game keeps 4 after a T8 upgrade
 PRIMORDIAL_TIER = 8        # sealed primordial affixes are T8 records (tier nibble 7)
@@ -67,15 +74,37 @@ def encode_affix(affix_id, tier, roll=ENCODE_ROLL):
     return [((tier - 1) << 4) | (affix_id >> 8), affix_id & 0xFF, roll]
 
 
+def roll_bytes(values, count):
+    """A profile roll list ("ir" / "ur", a list or {index: roll}) -> count bytes; any slot
+    the profile doesn't give is a perfect 255."""
+    if isinstance(values, dict):
+        values = {int(k): v for k, v in values.items() if str(k).isdigit()}
+        values = [values.get(i) for i in range(count)]
+    out = []
+    for i in range(count):
+        v = values[i] if isinstance(values, list) and i < len(values) else None
+        out.append(_roll(v))
+    return out
+
+
+def _roll(v):
+    try:
+        return max(0, min(255, int(round(float(v)))))
+    except (TypeError, ValueError):
+        return ENCODE_ROLL
+
+
 def encode_item_data(base_type_id, subtype_id, affixes, sealed=None, rng=random,
-                     corruption=None, corrupted=False, forging_potential=None, primordial=()):
-    """affixes: list of (affix_id, tier) for the visible affixes, in order.
-    sealed: (affix_id, tier) or None -> first record, flag 64 in byte 13.
-    primordial: list of affix IDs for sealed primordial (T8) affixes. Each is an ordinary
+                     corruption=None, corrupted=False, forging_potential=None, primordial=(),
+                     implicit_rolls=None):
+    """affixes: list of (affix_id, tier[, roll]) for the visible affixes, in order.
+    sealed: (affix_id, tier[, roll]) or None -> first record, flag 64 in byte 13.
+    implicit_rolls: 3 roll bytes for [9-11] (default perfect).
+    primordial: list of (affix_id, roll) for sealed primordial (T8) affixes. Each is an ordinary
       T8 record placed after the sealed affix and before the visible ones; it needs no flag
       in byte 13, and the item keeps rarity 4 (rare) in byte 7 (decoder: Rune of Evolution
       test on Champion Regalia).
-    corruption: (affix_id, tier) or None -> last record, flag 128 in byte 13, byte 8 = 16.
+    corruption: (affix_id, tier[, roll]) or None -> last record, flag 128 in byte 13, byte 8 = 16.
     corrupted: set byte 8 = 16 without a corruption affix (e.g. Idol Altars).
     forging_potential: overrides ENCODE_FORGING_POTENTIAL (0-63).
     Returns the save file's data byte list."""
@@ -85,7 +114,7 @@ def encode_item_data(base_type_id, subtype_id, affixes, sealed=None, rng=random,
         raise EncodeError("too many affixes")
     primordial = list(primordial)
     records = (([encode_affix(*sealed)] if sealed else [])
-               + [encode_affix(aid, PRIMORDIAL_TIER) for aid in primordial]
+               + [encode_affix(aid, PRIMORDIAL_TIER, roll) for aid, roll in primordial]
                + [encode_affix(*a) for a in affixes])
     if corruption:
         records.append(encode_affix(*corruption))
@@ -97,7 +126,7 @@ def encode_item_data(base_type_id, subtype_id, affixes, sealed=None, rng=random,
     data += [RARE_RARITY if primordial else len(affixes)]  # [7] rarity / visible affix count
     fp = ENCODE_FORGING_POTENTIAL if forging_potential is None else forging_potential
     data += [CORRUPTED_FLAG if (corruption or corrupted) else 0]  # [8] flags (16 = corrupted)
-    data += [ENCODE_ROLL] * 3                              # [9-11] implicit rolls
+    data += list(implicit_rolls or [ENCODE_ROLL] * IMPLICIT_SLOTS)  # [9-11] implicit rolls
     data += [fp & 63]                # [12] forging potential, normal type
     data += [len(records) | (RECORD_FLAG_SEALED if sealed else 0)
              | (RECORD_FLAG_CORRUPTION if corruption else 0)]   # [13] record count + flags
@@ -115,7 +144,7 @@ def item_object(data, container_id, position=(0, 0)):
 
 def encode_unique_data(base_type_id, subtype_id, unique_id, legendary_affixes=(), rng=random,
                        corruption_affix=None, primordial_affixes=(), is_set=False,
-                       builtin_affixes=()):
+                       builtin_affixes=(), implicit_rolls=None, unique_rolls=None):
     """Unique / legendary item, per the decoder's findings.
     Plain unique (rarity 7), 23 bytes:
       [6, r,r,r,r, base, subtype, 7, 0, impl1-3, ID>>8, ID&255, 8 mod rolls, LP]
@@ -131,8 +160,9 @@ def encode_unique_data(base_type_id, subtype_id, unique_id, legendary_affixes=()
     the rarity 9 layout.
     Flag 128 in byte 22 is used ONLY with a corruption affix (byte 8 = 16). A clean legendary
     has byte 22 = record count and no flag; flag 128 without corruption shows Weaver's Will.
-    legendary_affixes / primordial_affixes / builtin_affixes: lists of (affix_id, tier);
-    corruption_affix: (affix_id, tier) or None.
+    legendary_affixes / primordial_affixes / builtin_affixes: lists of (affix_id, tier[, roll]);
+    corruption_affix: (affix_id, tier[, roll]) or None.
+    implicit_rolls / unique_rolls: 3 / 8 roll bytes for [9-11] / [14-21] (default perfect).
     builtin_affixes: Unsated Rage's Rage / Withstand the Elements' two overcapped-resistance
       affixes. Ordinary records, no flag. Confirmed in game:
       Unsated Rage 4 LP:  [..., 1,221, 255 x8, 5, 4 slams, 4,87,255]            byte 8 = 0
@@ -161,30 +191,31 @@ def encode_unique_data(base_type_id, subtype_id, unique_id, legendary_affixes=()
     data += [base_type_id, subtype_id]                     # [5] base type, [6] base subtype
     data += [LEGENDARY_RARITY if extra else SET_RARITY if is_set else UNIQUE_RARITY]  # [7]
     data += [CORRUPTED_FLAG if corruption_affix else 0]    # [8] flags (16 = corrupted)
-    data += [ENCODE_ROLL] * 3                              # [9-11] implicit rolls
+    data += list(implicit_rolls or [ENCODE_ROLL] * IMPLICIT_SLOTS)  # [9-11] implicit rolls
     data += [unique_id >> 8, unique_id & 0xFF]             # [12-13] unique ID (16-bit)
-    data += [ENCODE_ROLL] * UNIQUE_ROLL_SLOTS              # [14-21] unique mod rolls
+    data += list(unique_rolls or [ENCODE_ROLL] * UNIQUE_ROLL_SLOTS)  # [14-21] unique mod rolls
     if extra:
         data += [len(extra) | (RECORD_FLAG_CORRUPTION if corruption_affix else 0)]  # [22]
-        for aid, tier in extra:                            # [23+] affix records
-            data += encode_affix(aid, tier)
+        for a in extra:                                    # [23+] affix records
+            data += encode_affix(*a)
     else:
         data += [UNIQUE_LEGENDARY_POTENTIAL]               # [22] legendary potential
     return data
 
 
-def _affix_pair(a):
+def _affix_pair(a, use_rolls=False):
+    """-> (affix_id, tier, roll); roll is the profile's "r" when use_rolls, else 255."""
     aid = decode_affix_id(a.get("id", ""))
     if aid is None or a.get("tier") is None:
         raise EncodeError("could not read affix %r" % a.get("id"))
-    return aid, int(a["tier"])
+    return aid, int(a["tier"]), _roll(a.get("r")) if use_rolls else ENCODE_ROLL
 
 
-def _affix_list(value):
-    """A primordialAffix field (one affix or a list, as Maxroll gives it) -> [(id, tier)]."""
+def _affix_list(value, use_rolls=False):
+    """A primordialAffix field (one affix or a list, as Maxroll gives it) -> [(id, tier, roll)]."""
     if not value:
         return []
-    return [_affix_pair(a) for a in (value if isinstance(value, list) else [value])]
+    return [_affix_pair(a, use_rolls) for a in (value if isinstance(value, list) else [value])]
 
 
 def idol_grid_position(x, y, height):
@@ -197,14 +228,23 @@ def idol_grid_position(x, y, height):
     return gx, gy
 
 
-def idol_size(item):
+def idol_size(item, tables):
+    """(width, height) of an idol. Unique idols ('U' codes, e.g. Throne of Ambition) carry no
+    base type in their code, so it comes from the unique table; without it a 2x2 unique idol
+    was taken as 1x1, its row came out one too high, and the game moved it to the inventory."""
     info = decode_item(item.get("id", ""))
-    return IDOL_SIZES.get(info.get("baseTypeId"), (1, 1))
+    bid = info.get("baseTypeId")
+    if bid is None and info.get("uniqueId"):
+        bid = (tables["uniques"].get(str(info["uniqueId"])) or {}).get("baseTypeId")
+    return IDOL_SIZES.get(bid, (1, 1))
 
 
-def encode_build_item(slot_key, item, tables, rng=random):
+def encode_build_item(slot_key, item, tables, rng=random, use_rolls=False):
     """Returns (data, container_id) for an equipped crafted or unique item, or an idol
-    (slot_key "idol", container = Inventory), or raises EncodeError."""
+    (slot_key "idol", container = Inventory), or raises EncodeError.
+    use_rolls: copy the item's real roll bytes (Last Epoch Tools profiles) instead of 255."""
+    pair = lambda a: _affix_pair(a, use_rolls)
+    implicit_rolls = roll_bytes(item.get("ir"), IMPLICIT_SLOTS) if use_rolls else None
     if slot_key == "idol":
         container = IDOL_GRID_CONTAINER
     elif slot_key not in CONTAINER_IDS:
@@ -223,11 +263,11 @@ def encode_build_item(slot_key, item, tables, rng=random):
         sub = info.get("subTypeId")
         if bid is None or sub is None:
             raise EncodeError("could not work out the unique's base item")
-        legendary = [_affix_pair(a) for a in item.get("affixes") or []]
+        legendary = [pair(a) for a in item.get("affixes") or []]
         # LE Tools puts a unique's corruption affix in either corruptedAffix or sealedAffix.
-        corr = [(f, _affix_pair(item[f])) for f in ("corruptedAffix", "sealedAffix")
+        corr = [(f, pair(item[f])) for f in ("corruptedAffix", "sealedAffix")
                 if item.get(f)]
-        primordial = _affix_list(item.get("primordialAffix"))
+        primordial = _affix_list(item.get("primordialAffix"), use_rolls)
         builtin = []
         pool = BUILTIN_AFFIXES.get(int(uid))
         if pool:
@@ -243,30 +283,33 @@ def encode_build_item(slot_key, item, tables, rng=random):
             if len(builtin) > count:
                 raise EncodeError("%s has %d built-in affixes (expected at most %d)"
                                   % (u.get("name") or "unique %s" % uid, len(builtin), count))
-            builtin = [(aid, BUILTIN_AFFIX_TIER) for aid, _tier in builtin]
+            builtin = [(aid, BUILTIN_AFFIX_TIER, roll) for aid, _tier, roll in builtin]
         if len(corr) > 1:
             raise EncodeError("unique has both a corruptedAffix and a sealedAffix")
         corruption = corr[0][1] if corr else None
         if corruption and corr[0][0] == "sealedAffix" and corruption[1] >= PRIMORDIAL_TIER:
             primordial.append(corruption)   # a T8 "sealed" affix is primordial, not corruption
             corruption = None
+        unique_rolls = roll_bytes(item.get("ur"), UNIQUE_ROLL_SLOTS) if use_rolls else None
         return (encode_unique_data(int(bid), int(sub), int(uid), legendary, rng, corruption,
                                    primordial, is_set=bool(u.get("isSet")),
-                                   builtin_affixes=builtin), container)
+                                   builtin_affixes=builtin, implicit_rolls=implicit_rolls,
+                                   unique_rolls=unique_rolls), container)
     if info.get("kind") != "I":
         raise EncodeError("unrecognised item code %r" % item.get("id"))
     if item.get("setAffix"):
         raise EncodeError("setAffix (a Reforged set affix on a crafted item) is not "
                           "supported by the encoder yet")
 
-    affixes = [_affix_pair(a) for a in item.get("affixes") or []]
-    sealed = _affix_pair(item["sealedAffix"]) if item.get("sealedAffix") else None
-    corruption = _affix_pair(item["corruptedAffix"]) if item.get("corruptedAffix") else None
+    affixes = [pair(a) for a in item.get("affixes") or []]
+    sealed = pair(item["sealedAffix"]) if item.get("sealedAffix") else None
+    corruption = pair(item["corruptedAffix"]) if item.get("corruptedAffix") else None
     # Sealed primordial (T8) affixes: LE Tools may list one as primordialAffix or as a
     # sealedAffix with tier 8. Either way it is written as a T8 record with no flag.
-    primordial = [aid for aid, _tier in _affix_list(item.get("primordialAffix"))]
+    primordial = [(aid, roll) for aid, _tier, roll
+                  in _affix_list(item.get("primordialAffix"), use_rolls)]
     if sealed and sealed[1] >= PRIMORDIAL_TIER:
-        primordial.insert(0, sealed[0])
+        primordial.insert(0, (sealed[0], sealed[2]))
         sealed = None
     is_gear = (info["baseTypeId"] not in IDOL_SIZES
                and info["baseTypeId"] != IDOL_ALTAR_BASE_TYPE)
@@ -276,20 +319,20 @@ def encode_build_item(slot_key, item, tables, rng=random):
         # forging potential to 0.
         return (encode_item_data(info["baseTypeId"], info["subTypeId"], affixes, corruption,
                                  rng, corrupted=True, forging_potential=0,
-                                 primordial=primordial), container)
+                                 primordial=primordial, implicit_rolls=implicit_rolls), container)
     if info["baseTypeId"] in IDOL_SIZES:
         data = encode_item_data(info["baseTypeId"], info["subTypeId"], affixes, sealed, rng,
                                 corruption, forging_potential=IDOL_FORGING_POTENTIAL,
-                                primordial=primordial)
+                                primordial=primordial, implicit_rolls=implicit_rolls)
     elif info["baseTypeId"] == IDOL_ALTAR_BASE_TYPE:
         # Matches an equipped altar logged from the game: normal layout, corrupted, 0 FP.
         data = encode_item_data(info["baseTypeId"], info["subTypeId"], affixes, sealed, rng,
                                 corruption, corrupted=True,
                                 forging_potential=IDOL_ALTAR_FORGING_POTENTIAL,
-                                primordial=primordial)
+                                primordial=primordial, implicit_rolls=implicit_rolls)
     else:
         data = encode_item_data(info["baseTypeId"], info["subTypeId"], affixes, sealed, rng,
-                                corruption, primordial=primordial)
+                                corruption, primordial=primordial, implicit_rolls=implicit_rolls)
     return data, container
 
 
@@ -363,7 +406,7 @@ def describe_item(code, tables):
             "bid": bid, "sub": sub}
 
 
-def item_row(slot_label, item, tables, lookup, slot_key=None):
+def item_row(slot_label, item, tables, lookup, slot_key=None, use_rolls=False):
     affixes = list(item.get("affixes") or [])
     for field, _label in EXTRA_AFFIX_FIELDS:  # sealed / primordial / corrupted affixes go last
         value = item.get(field)
@@ -375,7 +418,10 @@ def item_row(slot_label, item, tables, lookup, slot_key=None):
         aid = decode_affix_id(a.get("id", ""))
         info = tables["affixes"].get(str(aid), {}) if aid is not None else {}
         ids.append(str(aid) if aid is not None else "?")
-        tiers.append(str(a.get("tier", "?")))
+        tier = str(a.get("tier", "?"))
+        if use_rolls and a.get("r") is not None:
+            tier += " (%d%%)" % round(_roll(a["r"]) / 255 * 100)
+        tiers.append(tier)
         kinds.append({"Prefix": "P", "Suffix": "S"}.get(info.get("type"), "?"))
         names.append(info.get("name") or "?")
     return {
@@ -385,20 +431,20 @@ def item_row(slot_label, item, tables, lookup, slot_key=None):
         "Name": d["name"], "ID": d["id"],
         "_unique": d["unique"], "Affix": ", ".join(ids), "Affix Tier": ", ".join(tiers),
         "Prefix/Suffix": ", ".join(kinds), "_names": names,
-        **_encode_columns(slot_key, item, tables),
+        **_encode_columns(slot_key, item, tables, use_rolls),
     }
 
 
-def _encode_columns(slot_key, item, tables):
+def _encode_columns(slot_key, item, tables, use_rolls=False):
     if slot_key != "idol" and slot_key not in CONTAINER_IDS:
         return {"Data": "", "Container ID": "", "_object": None, "_encode_note": ""}
     try:
-        data, container = encode_build_item(slot_key, item, tables)
+        data, container = encode_build_item(slot_key, item, tables, use_rolls=use_rolls)
         position = (0, 0)
         if slot_key == "idol":
             if item.get("x") is None or item.get("y") is None:
                 raise EncodeError("the build gives no grid position for this idol")
-            position = idol_grid_position(int(item["x"]), int(item["y"]), idol_size(item)[1])
+            position = idol_grid_position(int(item["x"]), int(item["y"]), idol_size(item, tables)[1])
     except EncodeError as e:
         return {"Data": "", "Container ID": "", "_object": None, "_encode_note": str(e)}
     return {"Data": "[" + ",".join(map(str, data)) + "]", "Container ID": container,
@@ -408,16 +454,30 @@ def _encode_columns(slot_key, item, tables):
 def build_rows(build, tables, lookup=None):
     lookup = lookup or ItemIdLookup()
     data = build.get("data", build)
+    use_rolls = bool(build.get(USE_ROLLS_KEY))
     rows = []
     equipment = data.get("equipment") or {}
     for slot in SLOT_ORDER + [s for s in equipment if s not in SLOT_ORDER]:
         item = equipment.get(slot)
         if item and item.get("id"):
-            rows.append(item_row(SLOT_NAMES.get(slot, slot), item, tables, lookup, slot))
+            rows.append(item_row(SLOT_NAMES.get(slot, slot), item, tables, lookup, slot, use_rolls))
+            _log_rolls(SLOT_NAMES.get(slot, slot), item, use_rolls)
     idols = [i for i in (data.get("idols") or []) if i.get("id")]
     for n, idol in enumerate(idols, 1):
-        rows.append(item_row("Idol %d" % n, idol, tables, lookup, "idol"))
+        rows.append(item_row("Idol %d" % n, idol, tables, lookup, "idol", use_rolls))
+        _log_rolls("Idol %d" % n, idol, use_rolls)
     return rows
+
+
+def _log_rolls(label, item, use_rolls):
+    """Log file only: the raw roll fields a profile item came with, for checking in game."""
+    if not use_rolls:
+        return
+    affixes = [(f, a) for f in ["affixes"] + [f for f, _l in EXTRA_AFFIX_FIELDS]
+               for a in (item.get(f) if isinstance(item.get(f), list) else [item.get(f)]) if a]
+    logger.info("Rolls %s: ir=%s ur=%s affixes=%s", label, item.get("ir"), item.get("ur"),
+                ["%s %s T%s r=%s" % (f, decode_affix_id(a.get("id", "")), a.get("tier"), a.get("r"))
+                 for f, a in affixes])
 
 
 _AFFIX_COLS = [("Affix", "Affix"), ("Affix Tier", "Affix Tier"), ("Prefix/Suffix", "Prefix/Suffix")]

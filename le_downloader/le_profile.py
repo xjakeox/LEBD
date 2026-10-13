@@ -18,11 +18,13 @@ The site shows the others greyed out; only the ones that exist are offered here.
 
 With a picker (the GUI's scrollable list) the user chooses; without one (command line) the
 snapshot in the pasted link is used. The build itself is read like a planner page
-(let_fetch.load_page_data / finish_build).
+(let_fetch.load_page_data / finish_build). Unlike planners, profile items carry the game's
+real roll bytes, so the build is flagged to copy them into the save (items.USE_ROLLS_KEY).
 """
 import json
 import re
 from .common import logger
+from .items import USE_ROLLS_KEY
 from .let_fetch import WebSource, finish_build, load_page_data
 
 _PROFILE = re.compile(r"profile/([^/?#\s]+)/character/([^/?#\s]+)(?:/snapshot/([^/?#\s]+))?")
@@ -127,4 +129,6 @@ def run_from_link(link, log, choose=None):
     if value != wanted:
         path = snapshot_path(base, value)
         page, _, build = load_page_data(src, path, code, log)
-    return finish_build(src, path, code, page, build, log)
+    result = finish_build(src, path, code, page, build, log)
+    result[1][USE_ROLLS_KEY] = True   # profiles carry the items' real roll bytes
+    return result
