@@ -438,10 +438,79 @@ def fetch_build(src, path, code, log, page=None):
     return finish_build(src, path, code, page, build, log)
 
 
-def run_from_link(link, log):
-    """Last Epoch Tools planner link -> (code, build, tables, version)."""
+# ----------------------------------------------------------------------------------------
+# Build variants. A planner can hold up to 10 variants ("Main", "Worse Main", ...). The
+# planner_data answer lists them all (checked on AVavvwrl, 2026-11-09):
+#   "variants": [{"label": "Main", "id": "AVavvwrl"},
+#                {"label": "Worse Main", "id": "BGzEE32n", "build": {"data": {...}, "tags": ...}}]
+# Entry 0 is the main build (the usual top-level "data"); the others carry their own build.
+# ?variant=N in a link is the variant's position in that list (variant=1 = the second entry),
+# not a fixed id, so deleting a variant renumbers the ones after it.
+# ----------------------------------------------------------------------------------------
+_VARIANT_RX = re.compile(r"[?&]variant=(\d+)")
+
+
+def parse_variant(text):
+    """?variant=N in a planner link -> N, or None."""
+    m = _VARIANT_RX.search(text or "")
+    return int(m.group(1)) if m else None
+
+
+def variant_names(variants):
+    return [(v.get("label") if isinstance(v, dict) else None)
+            or ("Main" if i == 0 else "Variant %d" % (i + 1)) for i, v in enumerate(variants)]
+
+
+def choose_variant(variants, wanted, choose):
+    """Index of the variant to use. Only Main: no question. Otherwise choose(names,
+    default_index) asks the user (None = cancelled); without it the link's ?variant=N is used."""
+    if len(variants) < 2:
+        return 0
+    default = wanted if wanted is not None and 0 <= wanted < len(variants) else 0
+    if choose is None:
+        return default
+    choice = choose(variant_names(variants), default)
+    if choice is None:
+        raise ValueError("No build variant was chosen, so nothing was downloaded.")
+    return choice
+
+
+def pick_variant(data, build, code, wanted, choose, log):
+    """(build, code) for the chosen variant. Main keeps the plain code; other variants add
+    their name to it, like Maxroll gear sets (AVavvwrl_Worse_Main)."""
+    variants = data.get("variants") if isinstance(data, dict) else None
+    if not isinstance(variants, list) or len(variants) < 2:
+        if wanted:
+            log("  This planner has no variant %d; downloading the main build." % wanted)
+        return build, code
+    index = choose_variant(variants, wanted, choose)
+    name = variant_names(variants)[index]
+    log("Build variant: %s (%d of %d)" % (name, index + 1, len(variants)))
+    if index == 0:
+        return build, code
+    vb = variants[index].get("build") if isinstance(variants[index], dict) else None
+    if isinstance(vb, dict) and "data" not in vb:
+        vb = {"data": vb}
+    if not isinstance(vb, dict) or not isinstance(vb.get("data"), dict):
+        raise ValueError("The planner lists the variant \"%s\" but sent no build for it." % name)
+    vdata = vb["data"]
+    # Empty variants come back with [] where the main build has {} (blessings, buffSettings).
+    for key in ("blessings", "weaverTreeContainers", "buffSettings"):
+        if isinstance(vdata.get(key), list):
+            vdata[key] = {str(i): v for i, v in enumerate(vdata[key]) if v}
+    tag = re.sub(r"[^A-Za-z0-9]+", "_", name).strip("_") or str(index + 1)
+    return vb, "%s_%s" % (code, tag)
+
+
+def run_from_link(link, log, choose=None):
+    """Last Epoch Tools planner link -> (code, build, tables, version). With several build
+    variants, choose(names, default_index) picks one (the GUI's popup); without it the link's
+    ?variant=N (or Main) is used."""
     path, code = parse_link(link)
-    return fetch_build(WebSource(log), path, code, log)
+    src = WebSource(log)
+    page, data, build = load_page_data(src, path, code, log)
+    build, code = pick_variant(data, build, code, parse_variant(link), choose, log)
+    return finish_build(src, path, code, page, build, log)
 
 
 # ----------------------------------------------------------------------------------------

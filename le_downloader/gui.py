@@ -24,7 +24,7 @@ def run_gui():
         pass
 
     root = tk.Tk()
-    root.title("Last Epoch Build Downloader - Season 5 - V1.3.1")
+    root.title("Last Epoch Build Downloader - Season 5 - V1.3.2")
     icon_file = os.path.join(APP_DIR, "LastEpochBuildDownloader.ico")
     if os.path.isfile(icon_file):
         try:
@@ -329,7 +329,7 @@ def run_gui():
             ui(busy, False)
 
     def pick_from_list(title, prompt, labels, default):
-        """Popup with a scrollable list (Maxroll gear sets, profile days and events).
+        """Popup with a scrollable list (planner variants, Maxroll gear sets, profile days and events).
         Returns the chosen index or None."""
         win = tk.Toplevel(root)
         win.title(title)
@@ -373,6 +373,10 @@ def run_gui():
         return pick_from_list("Choose a gear set", "This planner has %d gear sets. Which one "
                               "should be downloaded?" % len(names), names, default)
 
+    def pick_variant_dialog(names, default):
+        return pick_from_list("Choose a build variant", "This planner has %d build variants. "
+                              "Which one should be downloaded?" % len(names), names, default)
+
     def pick_snapshot_dialog(labels, default):
         return pick_from_list("Choose a day or event", "Which day or event should be downloaded?",
                               labels, default)
@@ -402,10 +406,10 @@ def run_gui():
     def on_go(*_):
         link = link_var.get()
         if not link.strip():
-            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.3.1", "Paste a planner or profile character link first.")
+            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.3.2", "Paste a planner or profile character link first.")
             return
         if not name_var.get().strip():
-            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.3.1", "Enter a character name first.")
+            messagebox.showinfo("Last Epoch Build Downloader - Season 5 - V1.3.2", "Enter a character name first.")
             return
         corruption = corruption_var.get()
         if not corruption or not CORRUPTION_MIN <= int(corruption) <= CORRUPTION_MAX:
@@ -419,7 +423,7 @@ def run_gui():
         elif le_profile.is_profile_link(link):
             start(lambda: le_profile.run_from_link(link, log, ask_from_thread(pick_snapshot_dialog)))
         else:
-            start(lambda: run_from_link(link, log))
+            start(lambda: run_from_link(link, log, ask_from_thread(pick_variant_dialog)))
 
     go_btn.configure(command=on_go)
     browse_btn.configure(command=on_browse)
